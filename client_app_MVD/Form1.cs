@@ -70,9 +70,6 @@ namespace client_app_MVD
             sr.Close();           
         }
 
-        private void видыРеакцийНаПроиществияToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
