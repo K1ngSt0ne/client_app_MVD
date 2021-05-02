@@ -203,6 +203,7 @@ namespace client_app_MVD
             this.авторизацияToolStripMenuItem.ShowShortcutKeys = false;
             this.авторизацияToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.авторизацияToolStripMenuItem.Text = "Авторизация";
+            this.авторизацияToolStripMenuItem.Click += new System.EventHandler(this.enter_to_database);
             // 
             // регистрацияToolStripMenuItem
             // 
@@ -259,12 +260,14 @@ namespace client_app_MVD
             this.оПрограммеToolStripMenuItem1.Name = "оПрограммеToolStripMenuItem1";
             this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(193, 22);
             this.оПрограммеToolStripMenuItem1.Text = "О программе";
+            this.оПрограммеToolStripMenuItem1.Click += new System.EventHandler(this.about_program);
             // 
             // выходИзПрограммыToolStripMenuItem
             // 
             this.выходИзПрограммыToolStripMenuItem.Name = "выходИзПрограммыToolStripMenuItem";
             this.выходИзПрограммыToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.выходИзПрограммыToolStripMenuItem.Text = "Выход из программы";
+            this.выходИзПрограммыToolStripMenuItem.Click += new System.EventHandler(this.close_app);
             // 
             // главнаяToolStripMenuItem
             // 
