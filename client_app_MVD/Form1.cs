@@ -75,13 +75,14 @@ namespace client_app_MVD
             switch (keyData)
             {
                 case Keys.Escape:
-                    if (panel1.Visible == true)
+                    if (panel2.Visible == true)
+                        panel2.Visible = false;
+                    else if (panel1.Visible == true)
                     {
                         MessageBox.Show("Операция отменена", "Уведомление");
                         panel1.Visible = false;
                     }
-                    else if (panel2.Visible == true)
-                        panel2.Visible = false;
+
                        
                     break;
             }
