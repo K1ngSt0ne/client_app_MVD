@@ -31,6 +31,7 @@ namespace client_app_MVD
         private void enter_to_database(object sender, EventArgs e)
         {
             panel1.Visible = true;
+            panel1.Focus();
         }
 
         private void about_program(object sender, EventArgs e)
@@ -52,8 +53,7 @@ namespace client_app_MVD
         }
 
         private void access_to_database(object sender, EventArgs e)
-        {
-            
+        {            
 
         }
 
@@ -61,6 +61,7 @@ namespace client_app_MVD
         {
             panel2.Visible = true;
             panel2.BringToFront();
+            panel2.Focus();
             StreamReader sr = new StreamReader("help1.txt");
             string line="";
             while (!sr.EndOfStream)//пока не конец
@@ -91,13 +92,13 @@ namespace client_app_MVD
         void info_message()
         {
             foreach (Panel panel in this.Controls.OfType<Panel>())
-            {
-                if (panel.Focused)
-                {
-                    MessageBox.Show("Операция отменена", "Уведомление");
-                    panel.Visible = false;
-                }
-            }
+             {
+                 if (panel.Focused)
+                 {
+                     MessageBox.Show("Операция отменена", "Уведомление");
+                     panel.Visible = false;
+                 }
+             }
 
         }
 
