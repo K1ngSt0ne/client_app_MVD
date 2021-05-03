@@ -81,9 +81,7 @@ namespace client_app_MVD
                     {
                         MessageBox.Show("Операция отменена", "Уведомление");
                         panel1.Visible = false;
-                    }
-
-                       
+                    }                       
                     break;
             }
 
