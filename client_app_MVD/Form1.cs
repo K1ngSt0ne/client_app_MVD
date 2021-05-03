@@ -48,6 +48,7 @@ namespace client_app_MVD
         private void cancel_operation(object sender, EventArgs e)
         {
             info_message();
+            //нужно взять все активные панели и проверять какая из них сейчас в фокусе, а потом ее закрывать
         }
 
         private void access_to_database(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace client_app_MVD
             {
                 case Keys.Escape:
                     if (panel2.Visible == true)
-                        panel2.Visible = false;
+                        info_message();
                     else if (panel1.Visible == true)
                     {
                         info_message();
@@ -89,8 +90,15 @@ namespace client_app_MVD
         }
         void info_message()
         {
-            MessageBox.Show("Операция отменена", "Уведомление");
-            panel1.Visible = false;
+            foreach (Panel panel in this.Controls.OfType<Panel>())
+            {
+                if (panel.Focused)
+                {
+                    MessageBox.Show("Операция отменена", "Уведомление");
+                    panel.Visible = false;
+                }
+            }
+
         }
 
     }
