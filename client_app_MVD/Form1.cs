@@ -47,12 +47,12 @@ namespace client_app_MVD
 
         private void cancel_operation(object sender, EventArgs e)
         {
-            MessageBox.Show("Операция отменена", "Уведомление");
-            panel1.Visible = false;
+            info_message();
         }
 
         private void access_to_database(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -67,9 +67,31 @@ namespace client_app_MVD
                 line = sr.ReadLine();//читаем построчно    
                 label4.Text += line + Environment.NewLine;
             }
-            sr.Close();           
-        }
+            sr.Close();
 
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Escape:
+                    if (panel2.Visible == true)
+                        panel2.Visible = false;
+                    else if (panel1.Visible == true)
+                    {
+                        info_message();
+                    }
+                       
+                    break;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+        void info_message()
+        {
+            MessageBox.Show("Операция отменена", "Уведомление");
+            panel1.Visible = false;
+        }
 
     }
 }

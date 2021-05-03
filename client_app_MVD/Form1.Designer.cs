@@ -463,7 +463,7 @@ namespace client_app_MVD
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(209, 141);
+            this.panel1.Location = new System.Drawing.Point(208, 89);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 196);
             this.panel1.TabIndex = 1;
@@ -556,7 +556,7 @@ namespace client_app_MVD
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(134, 56);
+            this.panel2.Location = new System.Drawing.Point(112, 273);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(655, 370);
             this.panel2.TabIndex = 2;
