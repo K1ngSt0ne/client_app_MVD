@@ -563,9 +563,8 @@ namespace client_app_MVD
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(128, 55);
+            this.panel2.Location = new System.Drawing.Point(123, 62);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(655, 370);
             this.panel2.TabIndex = 2;
@@ -591,7 +590,7 @@ namespace client_app_MVD
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(19, 36);
+            this.panel3.Location = new System.Drawing.Point(143, 92);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(615, 297);
             this.panel3.TabIndex = 3;
@@ -668,6 +667,7 @@ namespace client_app_MVD
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 467);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
