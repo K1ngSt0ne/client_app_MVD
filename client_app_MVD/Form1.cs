@@ -92,5 +92,10 @@ namespace client_app_MVD
         {
             panel3.Visible = false;
         }
+
+        private void contacts_view(object sender, EventArgs e)
+        {
+            MessageBox.Show("Пластовец Сергей Григореьвич\nE-mail: acdc2018@ro.ru\nТелефон: 89811965249", "Контакты");
+        }
     }
 }

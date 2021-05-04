@@ -661,6 +661,7 @@ namespace client_app_MVD
             this.button5.TabIndex = 5;
             this.button5.Text = "Контакты..";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.contacts_view);
             // 
             // Form1
             // 
