@@ -88,9 +88,17 @@ namespace client_app_MVD
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -555,6 +563,7 @@ namespace client_app_MVD
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(128, 55);
             this.panel2.Name = "panel2";
@@ -572,6 +581,87 @@ namespace client_app_MVD
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 24);
             this.label4.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Location = new System.Drawing.Point(19, 36);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(615, 297);
+            this.panel3.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(236, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(130, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "О программе";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(36, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(547, 24);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Клиентское приложение для работы с базой данных \"МВД\"\r\n";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(106, 83);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(375, 24);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "выполненное в рамках курсовой работы";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(203, 209);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(215, 24);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Санкт-Петербург, 2021";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.Location = new System.Drawing.Point(65, 248);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(135, 33);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Продолжить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.close_about_programm);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button5.Location = new System.Drawing.Point(402, 248);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(135, 33);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Контакты..";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -591,6 +681,8 @@ namespace client_app_MVD
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,6 +749,13 @@ namespace client_app_MVD
         private System.Windows.Forms.ToolStripMenuItem формаПоступленияЗаявленийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem выходИзПрограммыToolStripMenuItem;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
 

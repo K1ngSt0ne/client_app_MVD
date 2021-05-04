@@ -35,7 +35,7 @@ namespace client_app_MVD
 
         private void about_program(object sender, EventArgs e)
         {
-            MessageBox.Show("здесь наверняка будет что нибудь интресное...", "Информация к размышлению");
+            panel3.Visible = true;
         }
 
         private void close_app(object sender, EventArgs e)
@@ -87,7 +87,10 @@ namespace client_app_MVD
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
-       
 
+        private void close_about_programm(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+        }
     }
 }
