@@ -22,32 +22,14 @@ namespace client_app_MVD
         {
             public class MySqlExecute
             {
-
-                /// <summary>
-                /// Возвращаемый набор данных.
-                /// </summary>
                 public class MyResult
                 {
-                    /// <summary>
-                    /// Возвращает результат запроса.
-                    /// </summary>
-                    public string ResultText;
-                    /// <summary>
-                    /// Возвращает True - если произошла ошибка.
-                    /// </summary>
-                    public string ErrorText;
-                    /// <summary>
-                    /// Возвращает текст ошибки.
-                    /// </summary>
+                    
+                    public string ResultText;                    
+                    public string ErrorText;                    
                     public bool HasError;
-                }
-
-                /// <summary>
-                /// Для выполнения запросов к MySQL с возвращением 1 параметра.
-                /// </summary>
-                /// <param name="sql">Текст запроса к базе данных</param>
-                /// <param name="connection">Строка подключения к базе данных</param>
-                /// <returns>Возвращает значение при успешном выполнении запроса, текст ошибки - при ошибке.</returns>
+                } 
+                //подумать над методом, возвращающим значения выполяемых запросов...
                 public static MyResult SqlScalar(string sql, string connection)
                 {
                     MyResult result = new MyResult();
@@ -77,12 +59,7 @@ namespace client_app_MVD
                 }
 
 
-                /// <summary>
-                /// Для выполнения запросов к MySQL без возвращения параметров.
-                /// </summary>
-                /// <param name="sql">Текст запроса к базе данных</param>
-                /// <param name="connection">Строка подключения к базе данных</param>
-                /// <returns>Возвращает True - ошибка или False - выполнено успешно.</returns>
+
                 public static MyResult SqlNoneQuery(string sql, string connection)
                 {
                     MyResult result = new MyResult();
