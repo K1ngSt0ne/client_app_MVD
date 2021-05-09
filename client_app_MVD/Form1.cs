@@ -181,7 +181,12 @@ namespace client_app_MVD
             if (result.HasError)
                 MessageBox.Show(result.ErrorText);
             else
-                MessageBox.Show("Добро пожаловать,....не доработано еще))", "Приветствие");
+            {
+                if (result.ResultText == "1")
+                    MessageBox.Show("Добро пожаловать,....не доработано еще))", "Приветствие");
+                else
+                    MessageBox.Show("Неверный логин или пароль", "Предупреждение");
+            }
         }
 
         private void help(object sender, EventArgs e)
