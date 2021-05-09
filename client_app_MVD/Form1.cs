@@ -308,26 +308,30 @@ namespace client_app_MVD
             int size = 20;
             panel5.Visible = true;
             var rank_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_rank, Rank_name from rank_table;", conncetion_string);
-            for (int i = 0; i < rank_table.ResultData.Rows.Count; i++)
-            {
-                for (int j = 0; j < rank_table.ResultData.Columns.Count; j++)
-                {
-                    var label = new Label();
-                    label.Size = new Size(size,20);
-                    label.Location=new Point(location_x, location_y);
-                    label.Font = new Font("Arial", 14);
-                    label.ForeColor = Color.White;
-                    label.Text = rank_table.ResultData.Rows[i][j].ToString();
-                    panel5.Controls.Add(label);
-                    size += 200;
-                    location_x += 120;
-                }
-                size = 20;
-                location_x = 20;
-                location_y += 30;
-            }
+            datatable_see(rank_table, location_x,location_y, size);
             //MessageBox.Show(rank_table.ResultData.Rows[0][1].ToString());// 0 столбец - идшка, 1 - название звания
             
+        }
+        void datatable_see(MySQLData.MySqlExecuteData.MyResultData myResultData, int location_X, int location_Y, int size)
+        {
+            for (int i = 0; i < myResultData.ResultData.Rows.Count; i++)
+            {
+                for (int j = 0; j < myResultData.ResultData.Columns.Count; j++)
+                {
+                    var label = new Label();
+                    label.Size = new Size(size, 20);
+                    label.Location = new Point(location_X, location_Y);
+                    label.Font = new Font("Arial", 14);
+                    label.ForeColor = Color.White;
+                    label.Text = myResultData.ResultData.Rows[i][j].ToString();
+                    panel5.Controls.Add(label);
+                    size += 200;
+                    location_X += 120;
+                }
+                size = 20;
+                location_X = 20;
+                location_Y += 30;
+            }
         }
     }
 }
