@@ -181,13 +181,38 @@ namespace client_app_MVD
                 MessageBox.Show("Какое-то из полей пустое. Ошибка!", "Предупреждение");
             else
             {
-                var result = MySQLData.MySqlExecute.SqlScalar("select exists(select login, password from users where login='" + textBox1.Text + "' and password='" + hash + "')", conncetion_string);
-                if (result.HasError)
-                    MessageBox.Show(result.ErrorText);
+                var access_to_database = MySQLData.MySqlExecute.SqlScalar("select exists(select login, password from users where login='" + textBox1.Text + "' and password='" + hash + "')", conncetion_string);
+                if (access_to_database.HasError)
+                    MessageBox.Show(access_to_database.ErrorText);
                 else
                 {
-                    if (result.ResultText == "1")
-                        MessageBox.Show("Добро пожаловать,....не доработано еще))", "Приветствие");
+                    if (access_to_database.ResultText == "1")
+                    {
+                        var user_role = MySQLData.MySqlExecute.SqlScalar("select user_role from users where login='"+textBox1.Text+"'", conncetion_string);
+                        switch (user_role.ResultText)
+                        {
+                            case "Сотрудник":
+                                MessageBox.Show("Добро пожаловать, Сотрудник!", "Приветствие");
+                                служебнаяИнформацияToolStripMenuItem1.Visible = true;
+                                аналитикаToolStripMenuItem1.Visible = true;
+                                картотеткиToolStripMenuItem.Visible = true;
+                                break;
+                            case "Заявитель":
+                                MessageBox.Show("Добро пожаловать, Заявитель!", "Приветствие");
+                                break;
+                            case "Участник события":
+                                MessageBox.Show("Добро пожаловать, Участник события!", "Приветствие");
+                                break;
+                            case "Администратор":
+                                MessageBox.Show("Добро пожаловать, Администратор!", "Приветствие");
+                                служебнаяИнформацияToolStripMenuItem1.Visible = true;
+                                аналитикаToolStripMenuItem1.Visible = true;
+                                картотеткиToolStripMenuItem.Visible = true;
+                                break;
+                        }                       
+
+                            
+                    }    
                     else
                     {
                         MessageBox.Show("Неверный логин или пароль", "Предупреждение");
