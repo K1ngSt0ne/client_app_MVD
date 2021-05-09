@@ -124,12 +124,15 @@ namespace client_app_MVD
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -985,11 +988,35 @@ namespace client_app_MVD
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel6.Controls.Add(this.label20);
+            this.panel6.Controls.Add(this.label19);
             this.panel6.Location = new System.Drawing.Point(12, 27);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(594, 367);
             this.panel6.TabIndex = 6;
             this.panel6.Visible = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label19.Location = new System.Drawing.Point(14, 20);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(168, 24);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "КодПроишествия";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label20.Location = new System.Drawing.Point(375, 20);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(97, 24);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Название";
             // 
             // Form1
             // 
@@ -1019,6 +1046,8 @@ namespace client_app_MVD
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1121,6 +1150,8 @@ namespace client_app_MVD
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
     }
 }
 
