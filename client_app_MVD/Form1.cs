@@ -168,7 +168,7 @@ namespace client_app_MVD
         private void cancel_operation(object sender, EventArgs e)
         {
             MessageBox.Show("Операция отменена", "Уведомление");
-            panel1.Visible = false;
+            panel1.Visible =panel4.Visible= false;
             
         }
 
@@ -223,7 +223,18 @@ namespace client_app_MVD
 
         private void user_registration(object sender, EventArgs e)
         {
-            panel4.Visible = false;
+            if ((textBox3.Text == "") || (textBox4.Text == "") || (textBox5.Text == "") || (textBox6.Text == "") || (textBox7.Text == "") || (textBox8.Text == "") || (textBox9.Text == ""))
+                MessageBox.Show("Какое-то из полей пустое. Ошибка!", "Предупреждение");
+            else
+            {
+                if (textBox7.Text != textBox8.Text)
+                    MessageBox.Show("Пароли не совпадают. Ошибка!");
+                else
+                {
+                    MessageBox.Show("Успешно!", "Уведомление");
+                    panel4.Visible = false;
+                }
+            }
         }
 
         private void registration_panel_open(object sender, EventArgs e)
