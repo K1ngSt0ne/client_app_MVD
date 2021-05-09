@@ -120,6 +120,7 @@ namespace client_app_MVD
             this.просмотрВсехУчастниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.картотекаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вводСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -942,11 +943,22 @@ namespace client_app_MVD
             this.вводСобытияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.вводСобытияToolStripMenuItem.Text = "Ввод события";
             // 
+            // panel5
+            // 
+            this.panel5.AutoScroll = true;
+            this.panel5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel5.Location = new System.Drawing.Point(12, 34);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(292, 310);
+            this.panel5.TabIndex = 5;
+            this.panel5.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 467);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -1064,6 +1076,7 @@ namespace client_app_MVD
         private System.Windows.Forms.ToolStripMenuItem просмотрВсехУчастниковToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem картотекаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вводСобытияToolStripMenuItem;
+        private System.Windows.Forms.Panel panel5;
     }
 }
 

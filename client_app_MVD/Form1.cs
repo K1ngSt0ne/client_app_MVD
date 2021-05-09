@@ -304,7 +304,18 @@ namespace client_app_MVD
         private void see_ranks_table(object sender, EventArgs e)
         {
             var rank_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_rank, Rank_name from rank_table;", conncetion_string);
-            MessageBox.Show(rank_table.ResultData.Rows[0][1].ToString());
+            for (int i = 0; i < rank_table.ResultData.Rows.Count; i++)
+            {
+                for (int j = 0; j < rank_table.ResultData.Columns.Count; j++)
+                {
+                    var label = new Label();
+                    label.Size = new Size(70,20);
+                    label.Font = new Font("Arial", 14);
+                    label.Text = rank_table.ResultData.Rows[i][j].ToString();
+                    panel5.Controls.Add(label);
+                }
+            }
+            //MessageBox.Show(rank_table.ResultData.Rows[0][1].ToString());// 0 столбец - идшка, 1 - название звания
             
         }
     }
