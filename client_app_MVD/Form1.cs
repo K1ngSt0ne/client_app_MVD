@@ -175,9 +175,9 @@ namespace client_app_MVD
 
         private void access_to_database(object sender, EventArgs e)
         {
-            var sha = new SHA1Managed();
-            var test = Convert.ToBase64String(sha.ComputeHash(Encoding.UTF8.GetBytes(textBox2.Text)));
-            var result =MySQLData.MySqlExecute.SqlScalar("select exists(select login, password from users where login='"+textBox1.Text+"' and password='"+sha.ComputeHash(Encoding.UTF8.GetBytes(textBox2.Text))+"')", conncetion_string);
+            var prepare_hash = new SHA1Managed().ComputeHash(Encoding.UTF8.GetBytes(textBox2.Text));
+            var hash = string.Concat(prepare_hash.Select(b => b.ToString("x2")));
+            var result =MySQLData.MySqlExecute.SqlScalar("select exists(select login, password from users where login='"+textBox1.Text+"' and password='"+hash+"')", conncetion_string);
             if (result.HasError)
                 MessageBox.Show(result.ErrorText);
             else
