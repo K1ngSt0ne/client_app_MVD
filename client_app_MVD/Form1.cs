@@ -231,6 +231,7 @@ namespace client_app_MVD
                     MessageBox.Show("Пароли не совпадают. Ошибка!");
                 else
                 {
+                    var user_registration_string = MySQLData.MySqlExecute.SqlNoneQuery("call users_registration('"+ textBox3.Text+"', '"+textBox4.Text+"', '"+textBox5.Text+"', '"+textBox6.Text+"', '"+textBox7.Text+"', '"+textBox9.Text+"');", conncetion_string);
                     MessageBox.Show("Успешно!", "Уведомление");
                     panel4.Visible = false;
                 }
