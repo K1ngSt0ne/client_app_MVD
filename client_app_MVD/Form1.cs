@@ -174,7 +174,7 @@ namespace client_app_MVD
 
         private void access_to_database(object sender, EventArgs e)
         {
-            var result =MySQLData.MySqlExecute.SqlScalar("select * from users", conncetion_string);
+            var result =MySQLData.MySqlExecute.SqlScalar("select exists(select login, password from users where login='"+textBox1.Text+"' and password='"+textBox2.Text+"')", conncetion_string);
             if (result.HasError)
                 MessageBox.Show(result.ErrorText);
         }
