@@ -114,6 +114,12 @@ namespace client_app_MVD
             this.button6 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.узнатьОСостоянииЗаявленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьЗаявителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотретьСписокЗаявителейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьУчастникаСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотрВсехУчастниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.картотекаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вводСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -163,18 +169,27 @@ namespace client_app_MVD
             // 
             // списокЗаявителейToolStripMenuItem1
             // 
+            this.списокЗаявителейToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьЗаявителяToolStripMenuItem,
+            this.просмотретьСписокЗаявителейToolStripMenuItem});
             this.списокЗаявителейToolStripMenuItem1.Name = "списокЗаявителейToolStripMenuItem1";
             this.списокЗаявителейToolStripMenuItem1.Size = new System.Drawing.Size(232, 22);
             this.списокЗаявителейToolStripMenuItem1.Text = "Список заявителей";
             // 
             // списокУчастниковСобытийToolStripMenuItem
             // 
+            this.списокУчастниковСобытийToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьУчастникаСобытияToolStripMenuItem,
+            this.просмотрВсехУчастниковToolStripMenuItem});
             this.списокУчастниковСобытийToolStripMenuItem.Name = "списокУчастниковСобытийToolStripMenuItem";
             this.списокУчастниковСобытийToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.списокУчастниковСобытийToolStripMenuItem.Text = "Список участников событий";
             // 
             // событияToolStripMenuItem1
             // 
+            this.событияToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.картотекаToolStripMenuItem,
+            this.вводСобытияToolStripMenuItem});
             this.событияToolStripMenuItem1.Name = "событияToolStripMenuItem1";
             this.событияToolStripMenuItem1.Size = new System.Drawing.Size(232, 22);
             this.событияToolStripMenuItem1.Text = "События";
@@ -888,6 +903,42 @@ namespace client_app_MVD
             this.узнатьОСостоянииЗаявленияToolStripMenuItem.Text = "Узнать о состоянии заявления";
             this.узнатьОСостоянииЗаявленияToolStripMenuItem.Visible = false;
             // 
+            // добавитьЗаявителяToolStripMenuItem
+            // 
+            this.добавитьЗаявителяToolStripMenuItem.Name = "добавитьЗаявителяToolStripMenuItem";
+            this.добавитьЗаявителяToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.добавитьЗаявителяToolStripMenuItem.Text = "Добавить заявителя";
+            // 
+            // просмотретьСписокЗаявителейToolStripMenuItem
+            // 
+            this.просмотретьСписокЗаявителейToolStripMenuItem.Name = "просмотретьСписокЗаявителейToolStripMenuItem";
+            this.просмотретьСписокЗаявителейToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.просмотретьСписокЗаявителейToolStripMenuItem.Text = "Просмотреть список заявителей";
+            // 
+            // добавитьУчастникаСобытияToolStripMenuItem
+            // 
+            this.добавитьУчастникаСобытияToolStripMenuItem.Name = "добавитьУчастникаСобытияToolStripMenuItem";
+            this.добавитьУчастникаСобытияToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.добавитьУчастникаСобытияToolStripMenuItem.Text = "Добавить участника события";
+            // 
+            // просмотрВсехУчастниковToolStripMenuItem
+            // 
+            this.просмотрВсехУчастниковToolStripMenuItem.Name = "просмотрВсехУчастниковToolStripMenuItem";
+            this.просмотрВсехУчастниковToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.просмотрВсехУчастниковToolStripMenuItem.Text = "Просмотр всех участников";
+            // 
+            // картотекаToolStripMenuItem
+            // 
+            this.картотекаToolStripMenuItem.Name = "картотекаToolStripMenuItem";
+            this.картотекаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.картотекаToolStripMenuItem.Text = "Картотека";
+            // 
+            // вводСобытияToolStripMenuItem
+            // 
+            this.вводСобытияToolStripMenuItem.Name = "вводСобытияToolStripMenuItem";
+            this.вводСобытияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.вводСобытияToolStripMenuItem.Text = "Ввод события";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1004,6 +1055,12 @@ namespace client_app_MVD
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolStripMenuItem узнатьОСостоянииЗаявленияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавитьЗаявителяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem просмотретьСписокЗаявителейToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавитьУчастникаСобытияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem просмотрВсехУчастниковToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem картотекаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вводСобытияToolStripMenuItem;
     }
 }
 

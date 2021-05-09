@@ -195,7 +195,7 @@ namespace client_app_MVD
                                 MessageBox.Show("Добро пожаловать, Сотрудник!", "Приветствие");
                                 служебнаяИнформацияToolStripMenuItem1.Visible = true;
                                 аналитикаToolStripMenuItem1.Visible = true;
-                                картотеткиToolStripMenuItem.Visible = true;
+                                картотеткиToolStripMenuItem.Visible = true;                                
                                 break;
                             case "Заявитель":
                                 MessageBox.Show("Добро пожаловать, Заявитель!", "Приветствие");
@@ -211,9 +211,9 @@ namespace client_app_MVD
                                 картотеткиToolStripMenuItem.Visible = true;
                                 узнатьОСостоянииЗаявленияToolStripMenuItem.Visible = true;
                                 break;
-                        }                       
+                        }
+                        panel1.Visible = false;
 
-                            
                     }    
                     else
                     {
