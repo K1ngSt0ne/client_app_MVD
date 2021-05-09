@@ -295,5 +295,17 @@ namespace client_app_MVD
         {
             panel4.Visible = true;
         }
+
+        private void see_applicants_table(object sender, EventArgs e)
+        {
+
+        }
+
+        private void see_ranks_table(object sender, EventArgs e)
+        {
+            var rank_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_rank, Rank_name from rank_table;", conncetion_string);
+            MessageBox.Show(rank_table.ResultData.Rows[0][1].ToString());
+            
+        }
     }
 }

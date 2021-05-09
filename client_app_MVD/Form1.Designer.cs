@@ -279,6 +279,7 @@ namespace client_app_MVD
             this.званияToolStripMenuItem1.Name = "званияToolStripMenuItem1";
             this.званияToolStripMenuItem1.Size = new System.Drawing.Size(251, 22);
             this.званияToolStripMenuItem1.Text = "Звания";
+            this.званияToolStripMenuItem1.Click += new System.EventHandler(this.see_ranks_table);
             // 
             // видыПреступленийToolStripMenuItem
             // 
@@ -915,6 +916,7 @@ namespace client_app_MVD
             this.просмотретьСписокЗаявителейToolStripMenuItem.Name = "просмотретьСписокЗаявителейToolStripMenuItem";
             this.просмотретьСписокЗаявителейToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.просмотретьСписокЗаявителейToolStripMenuItem.Text = "Просмотреть список заявителей";
+            this.просмотретьСписокЗаявителейToolStripMenuItem.Click += new System.EventHandler(this.see_applicants_table);
             // 
             // добавитьУчастникаСобытияToolStripMenuItem
             // 
