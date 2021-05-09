@@ -172,21 +172,29 @@ namespace client_app_MVD
             panel1.Visible =panel4.Visible= false;
             
         }
-
+        //работающая авторизация
         private void access_to_database(object sender, EventArgs e)
         {
             var prepare_hash = new SHA1Managed().ComputeHash(Encoding.UTF8.GetBytes(textBox2.Text));
             var hash = string.Concat(prepare_hash.Select(b => b.ToString("x2")));
-            var result =MySQLData.MySqlExecute.SqlScalar("select exists(select login, password from users where login='"+textBox1.Text+"' and password='"+hash+"')", conncetion_string);
-            if (result.HasError)
-                MessageBox.Show(result.ErrorText);
+            if ((textBox1.Text == "") || (textBox2.Text == ""))
+                MessageBox.Show("Какое-то из полей пустое. Ошибка!", "Предупреждение");
             else
             {
-                if (result.ResultText == "1")
-                    MessageBox.Show("Добро пожаловать,....не доработано еще))", "Приветствие");
+                var result = MySQLData.MySqlExecute.SqlScalar("select exists(select login, password from users where login='" + textBox1.Text + "' and password='" + hash + "')", conncetion_string);
+                if (result.HasError)
+                    MessageBox.Show(result.ErrorText);
                 else
-                    MessageBox.Show("Неверный логин или пароль", "Предупреждение");
-            }
+                {
+                    if (result.ResultText == "1")
+                        MessageBox.Show("Добро пожаловать,....не доработано еще))", "Приветствие");
+                    else
+                    {
+                        MessageBox.Show("Неверный логин или пароль", "Предупреждение");
+                        textBox1.Text = textBox2.Text = "";
+                    }
+                }
+            }           
         }
 
         private void help(object sender, EventArgs e)
