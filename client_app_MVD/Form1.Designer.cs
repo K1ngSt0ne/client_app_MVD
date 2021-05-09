@@ -886,6 +886,7 @@ namespace client_app_MVD
             this.узнатьОСостоянииЗаявленияToolStripMenuItem.Name = "узнатьОСостоянииЗаявленияToolStripMenuItem";
             this.узнатьОСостоянииЗаявленияToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.узнатьОСостоянииЗаявленияToolStripMenuItem.Text = "Узнать о состоянии заявления";
+            this.узнатьОСостоянииЗаявленияToolStripMenuItem.Visible = false;
             // 
             // Form1
             // 

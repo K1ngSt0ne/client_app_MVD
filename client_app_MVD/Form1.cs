@@ -199,6 +199,7 @@ namespace client_app_MVD
                                 break;
                             case "Заявитель":
                                 MessageBox.Show("Добро пожаловать, Заявитель!", "Приветствие");
+                                узнатьОСостоянииЗаявленияToolStripMenuItem.Visible = true;
                                 break;
                             case "Участник события":
                                 MessageBox.Show("Добро пожаловать, Участник события!", "Приветствие");
@@ -208,6 +209,7 @@ namespace client_app_MVD
                                 служебнаяИнформацияToolStripMenuItem1.Visible = true;
                                 аналитикаToolStripMenuItem1.Visible = true;
                                 картотеткиToolStripMenuItem.Visible = true;
+                                узнатьОСостоянииЗаявленияToolStripMenuItem.Visible = true;
                                 break;
                         }                       
 
