@@ -308,11 +308,11 @@ namespace client_app_MVD
             int size = 20;
             panel5.Visible = true;
             var rank_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_rank, Rank_name from rank_table;", conncetion_string);
-            datatable_see(rank_table, location_x,location_y, size);
+            datatable_see(rank_table, location_x,location_y, size, panel5);
             //MessageBox.Show(rank_table.ResultData.Rows[0][1].ToString());// 0 столбец - идшка, 1 - название звания
             
         }
-        void datatable_see(MySQLData.MySqlExecuteData.MyResultData myResultData, int location_X, int location_Y, int size)
+        void datatable_see(MySQLData.MySqlExecuteData.MyResultData myResultData, int location_X, int location_Y, int size, Panel panel_add)
         {
             for (int i = 0; i < myResultData.ResultData.Rows.Count; i++)
             {
@@ -324,7 +324,7 @@ namespace client_app_MVD
                     label.Font = new Font("Arial", 14);
                     label.ForeColor = Color.White;
                     label.Text = myResultData.ResultData.Rows[i][j].ToString();
-                    panel5.Controls.Add(label);
+                    panel_add.Controls.Add(label);
                     size += 200;
                     location_X += 120;
                 }
@@ -338,7 +338,7 @@ namespace client_app_MVD
         {
             panel6.Visible = true;
             var type_incident_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_type_incident, incident_name from type_incident_table;", conncetion_string);
-            datatable_see(type_incident_table, 20, 43, 20);
+            datatable_see(type_incident_table, 20, 43, 20, panel6);
         }
     }
 }

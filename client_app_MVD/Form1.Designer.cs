@@ -989,6 +989,7 @@ namespace client_app_MVD
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(594, 367);
             this.panel6.TabIndex = 6;
+            this.panel6.Visible = false;
             // 
             // Form1
             // 
