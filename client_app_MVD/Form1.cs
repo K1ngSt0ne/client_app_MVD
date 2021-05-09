@@ -333,5 +333,12 @@ namespace client_app_MVD
                 location_Y += 30;
             }
         }
+
+        private void type_incident_view(object sender, EventArgs e)
+        {
+            panel6.Visible = true;
+            var type_incident_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_type_incident, incident_name from type_incident_table;", conncetion_string);
+            datatable_see(type_incident_table, 20, 43, 20);
+        }
     }
 }

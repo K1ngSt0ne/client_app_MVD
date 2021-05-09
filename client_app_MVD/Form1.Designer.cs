@@ -123,6 +123,7 @@ namespace client_app_MVD
             this.panel5 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -290,6 +291,7 @@ namespace client_app_MVD
             this.видыПреступленийToolStripMenuItem.Name = "видыПреступленийToolStripMenuItem";
             this.видыПреступленийToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.видыПреступленийToolStripMenuItem.Text = "Виды преступлений";
+            this.видыПреступленийToolStripMenuItem.Click += new System.EventHandler(this.type_incident_view);
             // 
             // статусЗаявленийToolStripMenuItem
             // 
@@ -980,11 +982,20 @@ namespace client_app_MVD
             this.label18.TabIndex = 1;
             this.label18.Text = "Название";
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel6.Location = new System.Drawing.Point(12, 27);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(594, 367);
+            this.panel6.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 467);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -1108,6 +1119,7 @@ namespace client_app_MVD
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel panel6;
     }
 }
 
