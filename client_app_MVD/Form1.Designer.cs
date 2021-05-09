@@ -955,9 +955,10 @@ namespace client_app_MVD
             // 
             this.panel5.AutoScroll = true;
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.label18);
             this.panel5.Controls.Add(this.label17);
-            this.panel5.Location = new System.Drawing.Point(12, 34);
+            this.panel5.Location = new System.Drawing.Point(12, 27);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(399, 310);
             this.panel5.TabIndex = 5;
@@ -988,9 +989,10 @@ namespace client_app_MVD
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.label19);
-            this.panel6.Location = new System.Drawing.Point(12, 27);
+            this.panel6.Location = new System.Drawing.Point(12, 26);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(594, 367);
             this.panel6.TabIndex = 6;
@@ -1001,7 +1003,7 @@ namespace client_app_MVD
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label19.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label19.Location = new System.Drawing.Point(14, 20);
+            this.label19.Location = new System.Drawing.Point(24, 20);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(168, 24);
             this.label19.TabIndex = 0;
@@ -1022,7 +1024,7 @@ namespace client_app_MVD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 467);
+            this.ClientSize = new System.Drawing.Size(893, 457);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);

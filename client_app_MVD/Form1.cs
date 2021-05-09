@@ -303,17 +303,14 @@ namespace client_app_MVD
 
         private void see_ranks_table(object sender, EventArgs e)
         {
-            int location_x = 20;
-            int location_y = 43;
-            int size = 20;
             panel5.Visible = true;
+            panel5.BringToFront();
             var rank_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_rank, Rank_name from rank_table;", conncetion_string);
-            datatable_see(rank_table, location_x,location_y, size, panel5);
-            //MessageBox.Show(rank_table.ResultData.Rows[0][1].ToString());// 0 столбец - идшка, 1 - название звания
-            
+            datatable_see(rank_table, 20,43, 20, panel5);            
         }
         void datatable_see(MySQLData.MySqlExecuteData.MyResultData myResultData, int location_X, int location_Y, int size, Panel panel_add)
         {
+            int default_size = size;
             for (int i = 0; i < myResultData.ResultData.Rows.Count; i++)
             {
                 for (int j = 0; j < myResultData.ResultData.Columns.Count; j++)
@@ -326,9 +323,9 @@ namespace client_app_MVD
                     label.Text = myResultData.ResultData.Rows[i][j].ToString();
                     panel_add.Controls.Add(label);
                     size += 200;
-                    location_X += 120;
+                    location_X += 150;
                 }
-                size = 20;
+                size = default_size;
                 location_X = 20;
                 location_Y += 30;
             }
@@ -337,8 +334,9 @@ namespace client_app_MVD
         private void type_incident_view(object sender, EventArgs e)
         {
             panel6.Visible = true;
+            panel6.BringToFront();
             var type_incident_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_type_incident, incident_name from type_incident_table;", conncetion_string);
-            datatable_see(type_incident_table, 20, 43, 20, panel6);
+            datatable_see(type_incident_table, 20, 43, 90, panel6);
         }
     }
 }
