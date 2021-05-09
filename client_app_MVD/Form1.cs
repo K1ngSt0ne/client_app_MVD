@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 namespace client_app_MVD
 {
@@ -174,9 +175,13 @@ namespace client_app_MVD
 
         private void access_to_database(object sender, EventArgs e)
         {
-            var result =MySQLData.MySqlExecute.SqlScalar("select exists(select login, password from users where login='"+textBox1.Text+"' and password='"+textBox2.Text+"')", conncetion_string);
+            var sha = new SHA1Managed();
+            var test = Convert.ToBase64String(sha.ComputeHash(Encoding.UTF8.GetBytes(textBox2.Text)));
+            var result =MySQLData.MySqlExecute.SqlScalar("select exists(select login, password from users where login='"+textBox1.Text+"' and password='"+sha.ComputeHash(Encoding.UTF8.GetBytes(textBox2.Text))+"')", conncetion_string);
             if (result.HasError)
                 MessageBox.Show(result.ErrorText);
+            else
+                MessageBox.Show("Добро пожаловать,....не доработано еще))", "Приветствие");
         }
 
         private void help(object sender, EventArgs e)
