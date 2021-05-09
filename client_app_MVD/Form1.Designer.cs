@@ -121,11 +121,14 @@ namespace client_app_MVD
             this.картотекаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вводСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -947,11 +950,35 @@ namespace client_app_MVD
             // 
             this.panel5.AutoScroll = true;
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel5.Controls.Add(this.label18);
+            this.panel5.Controls.Add(this.label17);
             this.panel5.Location = new System.Drawing.Point(12, 34);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(292, 310);
+            this.panel5.Size = new System.Drawing.Size(399, 310);
             this.panel5.TabIndex = 5;
             this.panel5.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label17.Location = new System.Drawing.Point(14, 13);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(111, 24);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "КодЗвания";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label18.Location = new System.Drawing.Point(234, 13);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(97, 24);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Название";
             // 
             // Form1
             // 
@@ -978,6 +1005,8 @@ namespace client_app_MVD
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1077,6 +1106,8 @@ namespace client_app_MVD
         private System.Windows.Forms.ToolStripMenuItem картотекаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вводСобытияToolStripMenuItem;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
     }
 }
 

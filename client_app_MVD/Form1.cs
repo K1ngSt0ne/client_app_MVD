@@ -304,7 +304,8 @@ namespace client_app_MVD
         private void see_ranks_table(object sender, EventArgs e)
         {
             int location_x = 20;
-            int location_y = 23;
+            int location_y = 43;
+            int size = 20;
             panel5.Visible = true;
             var rank_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_rank, Rank_name from rank_table;", conncetion_string);
             for (int i = 0; i < rank_table.ResultData.Rows.Count; i++)
@@ -312,14 +313,16 @@ namespace client_app_MVD
                 for (int j = 0; j < rank_table.ResultData.Columns.Count; j++)
                 {
                     var label = new Label();
-                    label.Size = new Size(300,20);
+                    label.Size = new Size(size,20);
                     label.Location=new Point(location_x, location_y);
                     label.Font = new Font("Arial", 14);
                     label.ForeColor = Color.White;
                     label.Text = rank_table.ResultData.Rows[i][j].ToString();
                     panel5.Controls.Add(label);
+                    size += 200;
                     location_x += 120;
                 }
+                size = 20;
                 location_x = 20;
                 location_y += 30;
             }
