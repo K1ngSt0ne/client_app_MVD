@@ -195,21 +195,24 @@ namespace client_app_MVD
                                 MessageBox.Show("Добро пожаловать, Сотрудник!", "Приветствие");
                                 служебнаяИнформацияToolStripMenuItem1.Visible = true;
                                 аналитикаToolStripMenuItem1.Visible = true;
-                                картотеткиToolStripMenuItem.Visible = true;                                
+                                картотеткиToolStripMenuItem.Visible = true;
+                                справочникиToolStripMenuItem2.Visible = true;
                                 break;
                             case "Заявитель":
                                 MessageBox.Show("Добро пожаловать, Заявитель!", "Приветствие");
+                                справочникиToolStripMenuItem2.Visible = true;
                                 узнатьОСостоянииЗаявленияToolStripMenuItem.Visible = true;
                                 break;
                             case "Участник события":
                                 MessageBox.Show("Добро пожаловать, Участник события!", "Приветствие");
+                                справочникиToolStripMenuItem2.Visible = true;
                                 break;
                             case "Администратор":
                                 MessageBox.Show("Добро пожаловать, Администратор!", "Приветствие");
                                 служебнаяИнформацияToolStripMenuItem1.Visible = true;
                                 аналитикаToolStripMenuItem1.Visible = true;
                                 картотеткиToolStripMenuItem.Visible = true;
-                                главнаяToolStripMenuItem1.Visible = true;
+                                справочникиToolStripMenuItem2.Visible = true;
                                 break;
                         }
                         panel1.Visible = false;

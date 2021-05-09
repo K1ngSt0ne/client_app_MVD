@@ -149,7 +149,6 @@ namespace client_app_MVD
             this.главнаяToolStripMenuItem1.Name = "главнаяToolStripMenuItem1";
             this.главнаяToolStripMenuItem1.Size = new System.Drawing.Size(63, 20);
             this.главнаяToolStripMenuItem1.Text = "Главная";
-            this.главнаяToolStripMenuItem1.Visible = false;
             // 
             // информацияОToolStripMenuItem1
             // 
@@ -273,6 +272,7 @@ namespace client_app_MVD
             this.справочникиToolStripMenuItem2.Name = "справочникиToolStripMenuItem2";
             this.справочникиToolStripMenuItem2.Size = new System.Drawing.Size(193, 22);
             this.справочникиToolStripMenuItem2.Text = "Справочники";
+            this.справочникиToolStripMenuItem2.Visible = false;
             // 
             // званияToolStripMenuItem1
             // 
