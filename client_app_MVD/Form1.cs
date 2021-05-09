@@ -220,7 +220,7 @@ namespace client_app_MVD
         {
             MessageBox.Show("Пластовец Сергей Григореьвич\nE-mail: acdc2018@ro.ru\nТелефон: 89811965249", "Контакты");
         }
-
+        //рабочая регистрация пользователй (на авторизацию в базе)
         private void user_registration(object sender, EventArgs e)
         {
             if ((textBox3.Text == "") || (textBox4.Text == "") || (textBox5.Text == "") || (textBox6.Text == "") || (textBox7.Text == "") || (textBox8.Text == "") || (textBox9.Text == ""))
