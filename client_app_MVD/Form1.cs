@@ -17,9 +17,12 @@ namespace client_app_MVD
         public Form1()
         {
             InitializeComponent();
+            
         }
+        string conncetion_string = "server=localhost;user=root;password=12345;database=mvd_database_course_work;port=3306";
         public class MySQLData
         {
+            //класс для выполнения запросов
             public class MySqlExecute
             {
                 public class MyResult
@@ -29,14 +32,14 @@ namespace client_app_MVD
                     public string ErrorText;                    
                     public bool HasError;
                 } 
-                //подумать над методом, возвращающим значения выполяемых запросов...
+               //удем использовать этот метолд для авторизации
                 public static MyResult SqlScalar(string sql, string connection)
                 {
                     MyResult result = new MyResult();
                     try
                     {
-                        MySql.Data.MySqlClient.MySqlConnection connRC = new MySql.Data.MySqlClient.MySqlConnection(connection);
-                        MySql.Data.MySqlClient.MySqlCommand commRC = new MySql.Data.MySqlClient.MySqlCommand(sql, connRC);
+                        MySqlConnection connRC = new MySqlConnection(connection);
+                        MySqlCommand commRC = new MySqlCommand(sql, connRC);
                         connRC.Open();
                         try
                         {
@@ -59,14 +62,14 @@ namespace client_app_MVD
                 }
 
 
-
+                //для чего то пригодится, однозначно
                 public static MyResult SqlNoneQuery(string sql, string connection)
                 {
                     MyResult result = new MyResult();
                     try
                     {
-                        MySql.Data.MySqlClient.MySqlConnection connRC = new MySql.Data.MySqlClient.MySqlConnection(connection);
-                        MySql.Data.MySqlClient.MySqlCommand commRC = new MySql.Data.MySqlClient.MySqlCommand(sql, connRC);
+                        MySqlConnection connRC = new MySqlConnection(connection);
+                        MySqlCommand commRC = new MySqlCommand(sql, connRC);
                         connRC.Open();
                         try
                         {
@@ -89,50 +92,29 @@ namespace client_app_MVD
                 }
 
             }
-
-            /// <summary>
-            /// Методы реализующие выполнение запросов с возвращением набора данных.
-            /// </summary>
+            //класс для возвращаемых данных
             public class MySqlExecuteData
             {
-                /// <summary>
-                /// Возвращаемый набор данных.
-                /// </summary>
+
                 public class MyResultData
                 {
-                    /// <summary>
-                    /// Возвращает результат запроса.
-                    /// </summary>
-                    public DataTable ResultData;
-                    /// <summary>
-                    /// Возвращает True - если произошла ошибка.
-                    /// </summary>
+                    public DataTable ResultData; 
                     public string ErrorText;
-                    /// <summary>
-                    /// Возвращает текст ошибки.
-                    /// </summary>
                     public bool HasError;
                 }
-
-
-                /// <summary>
-                /// Выполняет запрос выборки набора строк.
-                /// </summary>
-                /// <param name="sql">Текст запроса к базе данных</param>
-                /// <param name="connection">Строка подключения к базе данных</param>
-                /// <returns>Возвращает набор строк в DataSet.</returns>
+                //заполним дата грип (а может нам и не понадобиться)
                 public static MyResultData SqlReturnDataset(string sql, string connection)
                 {
                     MyResultData result = new MyResultData();
                     try
                     {
-                        MySql.Data.MySqlClient.MySqlConnection connRC = new MySql.Data.MySqlClient.MySqlConnection(connection);
-                        MySql.Data.MySqlClient.MySqlCommand commRC = new MySql.Data.MySqlClient.MySqlCommand(sql, connRC);
+                        MySqlConnection connRC = new MySqlConnection(connection);
+                        MySqlCommand commRC = new MySqlCommand(sql, connRC);
                         connRC.Open();
 
                         try
                         {
-                            MySql.Data.MySqlClient.MySqlDataAdapter AdapterP = new MySql.Data.MySqlClient.MySqlDataAdapter();
+                            MySqlDataAdapter AdapterP = new MySqlDataAdapter();
                             AdapterP.SelectCommand = commRC;
                             DataSet ds1 = new DataSet();
                             AdapterP.Fill(ds1);
@@ -150,7 +132,6 @@ namespace client_app_MVD
                         result.ErrorText = ex.Message;
                         result.HasError = true;
                     }
-
                     return result;
 
                 }
@@ -169,7 +150,7 @@ namespace client_app_MVD
 
         private void enter_to_database(object sender, EventArgs e)
         {
-            panel1.Visible = true;
+            panel1.Visible = true;            
         }
 
         private void about_program(object sender, EventArgs e)
@@ -188,11 +169,14 @@ namespace client_app_MVD
         {
             MessageBox.Show("Операция отменена", "Уведомление");
             panel1.Visible = false;
+            
         }
 
         private void access_to_database(object sender, EventArgs e)
-        {            
-
+        {
+            var result =MySQLData.MySqlExecute.SqlScalar("select * from users", conncetion_string);
+            if (result.HasError)
+                MessageBox.Show(result.ErrorText);
         }
 
         private void help(object sender, EventArgs e)
@@ -235,6 +219,16 @@ namespace client_app_MVD
         private void contacts_view(object sender, EventArgs e)
         {
             MessageBox.Show("Пластовец Сергей Григореьвич\nE-mail: acdc2018@ro.ru\nТелефон: 89811965249", "Контакты");
+        }
+
+        private void user_registration(object sender, EventArgs e)
+        {
+            panel4.Visible = false;
+        }
+
+        private void registration_panel_open(object sender, EventArgs e)
+        {
+            panel4.Visible = true;
         }
     }
 }
