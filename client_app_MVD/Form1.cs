@@ -209,7 +209,7 @@ namespace client_app_MVD
                                 служебнаяИнформацияToolStripMenuItem1.Visible = true;
                                 аналитикаToolStripMenuItem1.Visible = true;
                                 картотеткиToolStripMenuItem.Visible = true;
-                                узнатьОСостоянииЗаявленияToolStripMenuItem.Visible = true;
+                                главнаяToolStripMenuItem1.Visible = true;
                                 break;
                         }
                         panel1.Visible = false;

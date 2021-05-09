@@ -149,6 +149,7 @@ namespace client_app_MVD
             this.главнаяToolStripMenuItem1.Name = "главнаяToolStripMenuItem1";
             this.главнаяToolStripMenuItem1.Size = new System.Drawing.Size(63, 20);
             this.главнаяToolStripMenuItem1.Text = "Главная";
+            this.главнаяToolStripMenuItem1.Visible = false;
             // 
             // информацияОToolStripMenuItem1
             // 
