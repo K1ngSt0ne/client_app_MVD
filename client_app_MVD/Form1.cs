@@ -338,5 +338,13 @@ namespace client_app_MVD
             var type_incident_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_type_incident, incident_name from type_incident_table;", conncetion_string);
             datatable_see(type_incident_table, 20, 58, 90, panel6);
         }
+
+        private void status_application_view(object sender, EventArgs e)
+        {
+            panel7.Visible = true;
+            panel7.BringToFront();
+            var status_application_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_status_application, status_application_name from status_application;", conncetion_string);
+            datatable_see(status_application_table, 20, 58,90, panel7);
+        }
     }
 }

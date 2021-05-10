@@ -32,10 +32,17 @@ namespace client_app_MVD
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.главнаяToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.информацияОToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.узнатьОСостоянииЗаявленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.картотеткиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокЗаявителейToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьЗаявителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотретьСписокЗаявителейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокУчастниковСобытийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьУчастникаСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотрВсехУчастниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.событияToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.картотекаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вводСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.аналитикаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.запросикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.служебнаяИнформацияToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -113,19 +120,15 @@ namespace client_app_MVD
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.узнатьОСостоянииЗаявленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьЗаявителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.просмотретьСписокЗаявителейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьУчастникаСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.просмотрВсехУчастниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.картотекаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.вводСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -133,6 +136,7 @@ namespace client_app_MVD
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -161,8 +165,15 @@ namespace client_app_MVD
             // информацияОToolStripMenuItem1
             // 
             this.информацияОToolStripMenuItem1.Name = "информацияОToolStripMenuItem1";
-            this.информацияОToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.информацияОToolStripMenuItem1.Size = new System.Drawing.Size(240, 22);
             this.информацияОToolStripMenuItem1.Text = "Информация о..";
+            // 
+            // узнатьОСостоянииЗаявленияToolStripMenuItem
+            // 
+            this.узнатьОСостоянииЗаявленияToolStripMenuItem.Name = "узнатьОСостоянииЗаявленияToolStripMenuItem";
+            this.узнатьОСостоянииЗаявленияToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.узнатьОСостоянииЗаявленияToolStripMenuItem.Text = "Узнать о состоянии заявления";
+            this.узнатьОСостоянииЗаявленияToolStripMenuItem.Visible = false;
             // 
             // картотеткиToolStripMenuItem
             // 
@@ -184,6 +195,19 @@ namespace client_app_MVD
             this.списокЗаявителейToolStripMenuItem1.Size = new System.Drawing.Size(232, 22);
             this.списокЗаявителейToolStripMenuItem1.Text = "Список заявителей";
             // 
+            // добавитьЗаявителяToolStripMenuItem
+            // 
+            this.добавитьЗаявителяToolStripMenuItem.Name = "добавитьЗаявителяToolStripMenuItem";
+            this.добавитьЗаявителяToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.добавитьЗаявителяToolStripMenuItem.Text = "Добавить заявителя";
+            // 
+            // просмотретьСписокЗаявителейToolStripMenuItem
+            // 
+            this.просмотретьСписокЗаявителейToolStripMenuItem.Name = "просмотретьСписокЗаявителейToolStripMenuItem";
+            this.просмотретьСписокЗаявителейToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.просмотретьСписокЗаявителейToolStripMenuItem.Text = "Просмотреть список заявителей";
+            this.просмотретьСписокЗаявителейToolStripMenuItem.Click += new System.EventHandler(this.see_applicants_table);
+            // 
             // списокУчастниковСобытийToolStripMenuItem
             // 
             this.списокУчастниковСобытийToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -193,6 +217,18 @@ namespace client_app_MVD
             this.списокУчастниковСобытийToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.списокУчастниковСобытийToolStripMenuItem.Text = "Список участников событий";
             // 
+            // добавитьУчастникаСобытияToolStripMenuItem
+            // 
+            this.добавитьУчастникаСобытияToolStripMenuItem.Name = "добавитьУчастникаСобытияToolStripMenuItem";
+            this.добавитьУчастникаСобытияToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.добавитьУчастникаСобытияToolStripMenuItem.Text = "Добавить участника события";
+            // 
+            // просмотрВсехУчастниковToolStripMenuItem
+            // 
+            this.просмотрВсехУчастниковToolStripMenuItem.Name = "просмотрВсехУчастниковToolStripMenuItem";
+            this.просмотрВсехУчастниковToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.просмотрВсехУчастниковToolStripMenuItem.Text = "Просмотр всех участников";
+            // 
             // событияToolStripMenuItem1
             // 
             this.событияToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -201,6 +237,18 @@ namespace client_app_MVD
             this.событияToolStripMenuItem1.Name = "событияToolStripMenuItem1";
             this.событияToolStripMenuItem1.Size = new System.Drawing.Size(232, 22);
             this.событияToolStripMenuItem1.Text = "События";
+            // 
+            // картотекаToolStripMenuItem
+            // 
+            this.картотекаToolStripMenuItem.Name = "картотекаToolStripMenuItem";
+            this.картотекаToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.картотекаToolStripMenuItem.Text = "Картотека";
+            // 
+            // вводСобытияToolStripMenuItem
+            // 
+            this.вводСобытияToolStripMenuItem.Name = "вводСобытияToolStripMenuItem";
+            this.вводСобытияToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.вводСобытияToolStripMenuItem.Text = "Ввод события";
             // 
             // аналитикаToolStripMenuItem1
             // 
@@ -214,7 +262,7 @@ namespace client_app_MVD
             // запросикиToolStripMenuItem
             // 
             this.запросикиToolStripMenuItem.Name = "запросикиToolStripMenuItem";
-            this.запросикиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.запросикиToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.запросикиToolStripMenuItem.Text = "запросики*";
             // 
             // служебнаяИнформацияToolStripMenuItem1
@@ -301,6 +349,7 @@ namespace client_app_MVD
             this.статусЗаявленийToolStripMenuItem.Name = "статусЗаявленийToolStripMenuItem";
             this.статусЗаявленийToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.статусЗаявленийToolStripMenuItem.Text = "Статус заявлений";
+            this.статусЗаявленийToolStripMenuItem.Click += new System.EventHandler(this.status_application_view);
             // 
             // времяРассмотренияЗаявленийToolStripMenuItem
             // 
@@ -907,50 +956,6 @@ namespace client_app_MVD
             this.label9.TabIndex = 0;
             this.label9.Text = "Добро пожаловать на регистрацию. Пожалуйста, укажите свои данные";
             // 
-            // узнатьОСостоянииЗаявленияToolStripMenuItem
-            // 
-            this.узнатьОСостоянииЗаявленияToolStripMenuItem.Name = "узнатьОСостоянииЗаявленияToolStripMenuItem";
-            this.узнатьОСостоянииЗаявленияToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.узнатьОСостоянииЗаявленияToolStripMenuItem.Text = "Узнать о состоянии заявления";
-            this.узнатьОСостоянииЗаявленияToolStripMenuItem.Visible = false;
-            // 
-            // добавитьЗаявителяToolStripMenuItem
-            // 
-            this.добавитьЗаявителяToolStripMenuItem.Name = "добавитьЗаявителяToolStripMenuItem";
-            this.добавитьЗаявителяToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.добавитьЗаявителяToolStripMenuItem.Text = "Добавить заявителя";
-            // 
-            // просмотретьСписокЗаявителейToolStripMenuItem
-            // 
-            this.просмотретьСписокЗаявителейToolStripMenuItem.Name = "просмотретьСписокЗаявителейToolStripMenuItem";
-            this.просмотретьСписокЗаявителейToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.просмотретьСписокЗаявителейToolStripMenuItem.Text = "Просмотреть список заявителей";
-            this.просмотретьСписокЗаявителейToolStripMenuItem.Click += new System.EventHandler(this.see_applicants_table);
-            // 
-            // добавитьУчастникаСобытияToolStripMenuItem
-            // 
-            this.добавитьУчастникаСобытияToolStripMenuItem.Name = "добавитьУчастникаСобытияToolStripMenuItem";
-            this.добавитьУчастникаСобытияToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.добавитьУчастникаСобытияToolStripMenuItem.Text = "Добавить участника события";
-            // 
-            // просмотрВсехУчастниковToolStripMenuItem
-            // 
-            this.просмотрВсехУчастниковToolStripMenuItem.Name = "просмотрВсехУчастниковToolStripMenuItem";
-            this.просмотрВсехУчастниковToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.просмотрВсехУчастниковToolStripMenuItem.Text = "Просмотр всех участников";
-            // 
-            // картотекаToolStripMenuItem
-            // 
-            this.картотекаToolStripMenuItem.Name = "картотекаToolStripMenuItem";
-            this.картотекаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.картотекаToolStripMenuItem.Text = "Картотека";
-            // 
-            // вводСобытияToolStripMenuItem
-            // 
-            this.вводСобытияToolStripMenuItem.Name = "вводСобытияToolStripMenuItem";
-            this.вводСобытияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.вводСобытияToolStripMenuItem.Text = "Ввод события";
-            // 
             // panel5
             // 
             this.panel5.AutoScroll = true;
@@ -964,17 +969,6 @@ namespace client_app_MVD
             this.panel5.TabIndex = 5;
             this.panel5.Visible = false;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label17.Location = new System.Drawing.Point(14, 13);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(111, 24);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "КодЗвания";
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -986,6 +980,17 @@ namespace client_app_MVD
             this.label18.TabIndex = 1;
             this.label18.Text = "Название";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label17.Location = new System.Drawing.Point(14, 13);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(111, 24);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "КодЗвания";
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -994,20 +999,9 @@ namespace client_app_MVD
             this.panel6.Controls.Add(this.label19);
             this.panel6.Location = new System.Drawing.Point(12, 26);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(594, 367);
+            this.panel6.Size = new System.Drawing.Size(612, 367);
             this.panel6.TabIndex = 6;
             this.panel6.Visible = false;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label19.Location = new System.Drawing.Point(14, 21);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(168, 24);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "КодПроишествия";
             // 
             // label20
             // 
@@ -1020,11 +1014,57 @@ namespace client_app_MVD
             this.label20.TabIndex = 1;
             this.label20.Text = "Название";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label19.Location = new System.Drawing.Point(14, 21);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(168, 24);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "КодПроишествия";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.label22);
+            this.panel7.Controls.Add(this.label21);
+            this.panel7.Location = new System.Drawing.Point(12, 27);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(399, 310);
+            this.panel7.TabIndex = 7;
+            this.panel7.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label21.Location = new System.Drawing.Point(16, 15);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(214, 24);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "КодСтатусаЗаявления";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label22.Location = new System.Drawing.Point(268, 15);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(97, 24);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Название";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 457);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -1050,6 +1090,8 @@ namespace client_app_MVD
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1154,6 +1196,9 @@ namespace client_app_MVD
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
     }
 }
 
