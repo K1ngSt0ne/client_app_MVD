@@ -33,7 +33,7 @@ namespace client_app_MVD
                     public string ErrorText;                    
                     public bool HasError;
                 } 
-               //удем использовать этот метолд для авторизации
+               //будем использовать этот метолд для авторизации
                 public static MyResult SqlScalar(string sql, string connection)
                 {
                     MyResult result = new MyResult();
@@ -345,6 +345,14 @@ namespace client_app_MVD
             panel7.BringToFront();
             var status_application_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_status_application, status_application_name from status_application;", conncetion_string);
             datatable_see(status_application_table, 20, 58,90, panel7);
+        }
+
+        private void time_rewiev_application_view(object sender, EventArgs e)
+        {
+            panel8.Visible = true;
+            panel8.BringToFront();
+            var time_review_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_time_review,how_long_days from time_review_table;", conncetion_string);
+            datatable_see(time_review_table, 20, 58, 90, panel8);
         }
     }
 }

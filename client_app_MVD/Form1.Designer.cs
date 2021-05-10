@@ -129,6 +129,9 @@ namespace client_app_MVD
             this.panel7 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -137,6 +140,7 @@ namespace client_app_MVD
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -356,6 +360,7 @@ namespace client_app_MVD
             this.времяРассмотренияЗаявленийToolStripMenuItem.Name = "времяРассмотренияЗаявленийToolStripMenuItem";
             this.времяРассмотренияЗаявленийToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.времяРассмотренияЗаявленийToolStripMenuItem.Text = "Время рассмотрения заявлений";
+            this.времяРассмотренияЗаявленийToolStripMenuItem.Click += new System.EventHandler(this.time_rewiev_application_view);
             // 
             // формаПоступленияЗаявленийToolStripMenuItem
             // 
@@ -1059,11 +1064,45 @@ namespace client_app_MVD
             this.label22.TabIndex = 2;
             this.label22.Text = "Название";
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel8.Controls.Add(this.label24);
+            this.panel8.Controls.Add(this.label23);
+            this.panel8.Location = new System.Drawing.Point(12, 27);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(411, 318);
+            this.panel8.TabIndex = 8;
+            this.panel8.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label23.Location = new System.Drawing.Point(16, 15);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(149, 24);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "КодВрм.Расмм.";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label24.Location = new System.Drawing.Point(245, 17);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(113, 24);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Число дней";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 457);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -1092,6 +1131,8 @@ namespace client_app_MVD
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1199,6 +1240,9 @@ namespace client_app_MVD
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
     }
 }
 
