@@ -336,7 +336,7 @@ namespace client_app_MVD
             panel6.Visible = true;
             panel6.BringToFront();
             var type_incident_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_type_incident, incident_name from type_incident_table;", conncetion_string);
-            datatable_see(type_incident_table, 20, 43, 90, panel6);
+            datatable_see(type_incident_table, 20, 58, 90, panel6);
         }
     }
 }

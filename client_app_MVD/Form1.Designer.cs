@@ -1003,7 +1003,7 @@ namespace client_app_MVD
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label19.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label19.Location = new System.Drawing.Point(24, 20);
+            this.label19.Location = new System.Drawing.Point(14, 21);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(168, 24);
             this.label19.TabIndex = 0;
@@ -1014,7 +1014,7 @@ namespace client_app_MVD
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label20.Location = new System.Drawing.Point(375, 20);
+            this.label20.Location = new System.Drawing.Point(373, 21);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(97, 24);
             this.label20.TabIndex = 1;
