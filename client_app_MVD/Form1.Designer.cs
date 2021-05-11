@@ -127,11 +127,15 @@ namespace client_app_MVD
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -141,6 +145,7 @@ namespace client_app_MVD
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -284,12 +289,14 @@ namespace client_app_MVD
             this.списокСотрудниковToolStripMenuItem1.Name = "списокСотрудниковToolStripMenuItem1";
             this.списокСотрудниковToolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
             this.списокСотрудниковToolStripMenuItem1.Text = "Список сотрудников";
+            this.списокСотрудниковToolStripMenuItem1.Click += new System.EventHandler(this.personal_table_view);
             // 
             // должностиToolStripMenuItem1
             // 
             this.должностиToolStripMenuItem1.Name = "должностиToolStripMenuItem1";
             this.должностиToolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
             this.должностиToolStripMenuItem1.Text = "Должности";
+            this.должностиToolStripMenuItem1.Click += new System.EventHandler(this.status_table_view);
             // 
             // справочникиToolStripMenuItem1
             // 
@@ -367,6 +374,7 @@ namespace client_app_MVD
             this.формаПоступленияЗаявленийToolStripMenuItem.Name = "формаПоступленияЗаявленийToolStripMenuItem";
             this.формаПоступленияЗаявленийToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.формаПоступленияЗаявленийToolStripMenuItem.Text = "Форма поступления заявлений";
+            this.формаПоступленияЗаявленийToolStripMenuItem.Click += new System.EventHandler(this.forms_entrance_view);
             // 
             // оПрограммеToolStripMenuItem1
             // 
@@ -1042,17 +1050,6 @@ namespace client_app_MVD
             this.panel7.TabIndex = 7;
             this.panel7.Visible = false;
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label21.Location = new System.Drawing.Point(16, 15);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(214, 24);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "КодСтатусаЗаявления";
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -1064,9 +1061,21 @@ namespace client_app_MVD
             this.label22.TabIndex = 2;
             this.label22.Text = "Название";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label21.Location = new System.Drawing.Point(16, 15);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(214, 24);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "КодСтатусаЗаявления";
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel8.Controls.Add(this.label24);
             this.panel8.Controls.Add(this.label23);
             this.panel8.Location = new System.Drawing.Point(12, 27);
@@ -1074,17 +1083,6 @@ namespace client_app_MVD
             this.panel8.Size = new System.Drawing.Size(411, 318);
             this.panel8.TabIndex = 8;
             this.panel8.Visible = false;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label23.Location = new System.Drawing.Point(16, 15);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(149, 24);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "КодВрм.Расмм.";
             // 
             // label24
             // 
@@ -1097,11 +1095,69 @@ namespace client_app_MVD
             this.label24.TabIndex = 3;
             this.label24.Text = "Число дней";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label23.Location = new System.Drawing.Point(16, 15);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(149, 24);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "КодВрм.Расмм.";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.label27);
+            this.panel9.Controls.Add(this.label26);
+            this.panel9.Controls.Add(this.label25);
+            this.panel9.Location = new System.Drawing.Point(12, 26);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(869, 358);
+            this.panel9.TabIndex = 9;
+            this.panel9.Visible = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label25.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label25.Location = new System.Drawing.Point(14, 14);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(202, 24);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Название должности";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label26.Location = new System.Drawing.Point(364, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(130, 24);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Обязанности";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label27.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label27.Location = new System.Drawing.Point(643, 14);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(119, 24);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Требования";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 457);
+            this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -1133,6 +1189,8 @@ namespace client_app_MVD
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1243,6 +1301,10 @@ namespace client_app_MVD
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
     }
 }
 

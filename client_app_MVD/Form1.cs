@@ -183,7 +183,7 @@ namespace client_app_MVD
             {
                 var access_to_database = MySQLData.MySqlExecute.SqlScalar("select exists(select login, password from users where login='" + textBox1.Text + "' and password='" + hash + "')", conncetion_string);
                 if (access_to_database.HasError)
-                    MessageBox.Show(access_to_database.ErrorText);
+                    MessageBox.Show(access_to_database.ErrorText, "Уведомление");
                 else
                 {
                     if (access_to_database.ResultText == "1")
@@ -353,6 +353,24 @@ namespace client_app_MVD
             panel8.BringToFront();
             var time_review_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_time_review,how_long_days from time_review_table;", conncetion_string);
             datatable_see(time_review_table, 20, 58, 90, panel8);
+        }
+
+        private void status_table_view(object sender, EventArgs e)
+        {
+            panel9.Visible = true;
+            panel9.BringToFront();
+            var status_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select status_name, Duties, Demands from status_table; ", conncetion_string);
+            datatable_see(status_table, 20, 58, 90, panel9);
+        }
+
+        private void personal_table_view(object sender, EventArgs e)
+        {
+
+        }
+
+        private void forms_entrance_view(object sender, EventArgs e)
+        {
+
         }
     }
 }
