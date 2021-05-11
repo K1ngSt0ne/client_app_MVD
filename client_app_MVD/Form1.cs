@@ -322,8 +322,8 @@ namespace client_app_MVD
                     label.ForeColor = Color.White;
                     label.Text = myResultData.ResultData.Rows[i][j].ToString();
                     panel_add.Controls.Add(label);
-                    size += 200;
-                    location_X += 150;
+                    size += 400;
+                    location_X += 190;
                 }
                 size = default_size;
                 location_X = 20;
@@ -344,7 +344,7 @@ namespace client_app_MVD
             panel7.Visible = true;
             panel7.BringToFront();
             var status_application_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_status_application, status_application_name from status_application;", conncetion_string);
-            datatable_see(status_application_table, 20, 58,90, panel7);
+            datatable_see(status_application_table, 20, 58,150, panel7);
         }
 
         private void time_rewiev_application_view(object sender, EventArgs e)
@@ -352,15 +352,15 @@ namespace client_app_MVD
             panel8.Visible = true;
             panel8.BringToFront();
             var time_review_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_time_review,how_long_days from time_review_table;", conncetion_string);
-            datatable_see(time_review_table, 20, 58, 90, panel8);
+            datatable_see(time_review_table, 20, 58, 140, panel8);
         }
 
         private void status_table_view(object sender, EventArgs e)
         {
             panel9.Visible = true;
             panel9.BringToFront();
-            var status_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select status_name, Duties, Demands from status_table; ", conncetion_string);
-            datatable_see(status_table, 20, 58, 90, panel9);
+            var status_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select status_name, Duties from status_table; ", conncetion_string);
+            datatable_see(status_table, 20, 58, 140, panel9);
         }
 
         private void personal_table_view(object sender, EventArgs e)
@@ -370,7 +370,10 @@ namespace client_app_MVD
 
         private void forms_entrance_view(object sender, EventArgs e)
         {
-
+            panel10.Visible = true;
+            panel10.BringToFront();
+            var forms_entrance = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_form_entrance, form_name from forms_entrance_table;", conncetion_string);
+            datatable_see(forms_entrance, 20, 58, 100, panel10);
         }
     }
 }
