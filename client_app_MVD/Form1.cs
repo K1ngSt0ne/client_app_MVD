@@ -301,7 +301,7 @@ namespace client_app_MVD
             panel13.Visible = true;
             panel13.BringToFront();
             var applicants_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from applicants_ivent;", conncetion_string);
-            dataGridView1.DataSource = applicants_table.ResultData;
+            dataGridView3.DataSource = applicants_table.ResultData;
         }
 
         private void see_ranks_table(object sender, EventArgs e)
@@ -389,7 +389,15 @@ namespace client_app_MVD
             panel12.Visible = true;
             panel12.BringToFront();
             var member_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from members_ivent;", conncetion_string);
-            dataGridView1.DataSource = member_table.ResultData;
+            dataGridView2.DataSource = member_table.ResultData;
+        }
+
+        private void application_view(object sender, EventArgs e)
+        {
+            panel14.Visible = true;
+            panel14.BringToFront();
+            var application_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_application,type_incident_table.incident_name, applications_table.entrance_date,status_application.status_application_name,applicants_table.last_name from applications_table inner join type_incident_table on applications_table.id_type_incident = type_incident_table.id_type_incident inner join status_application on applications_table.id_status_application = status_application.id_status_application inner join applicants_table on applications_table.id_applicant = applicants_table.id_applicant;", conncetion_string);
+            dataGridView4.DataSource = application_table.ResultData;
         }
     }
 }
