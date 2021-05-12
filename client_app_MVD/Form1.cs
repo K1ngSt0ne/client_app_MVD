@@ -298,7 +298,10 @@ namespace client_app_MVD
 
         private void see_applicants_table(object sender, EventArgs e)
         {
-
+            panel13.Visible = true;
+            panel13.BringToFront();
+            var applicants_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from applicants_ivent;", conncetion_string);
+            dataGridView1.DataSource = applicants_table.ResultData;
         }
 
         private void see_ranks_table(object sender, EventArgs e)
@@ -367,9 +370,9 @@ namespace client_app_MVD
         {
             panel11.Visible = true;
             panel11.BringToFront();
-            var personal_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from members_ivent;", conncetion_string);
+            var personal_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from personal_table;", conncetion_string);
             dataGridView1.DataSource = personal_table.ResultData;
-            //select last_name, first_name, patronymic, Date_of_birth from personal_table
+            //select last_name, first_name, patronymic, Date_of_birth from 
 
         }
 
@@ -383,7 +386,10 @@ namespace client_app_MVD
 
         private void members_ivent_view(object sender, EventArgs e)
         {
-
+            panel12.Visible = true;
+            panel12.BringToFront();
+            var member_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from members_ivent;", conncetion_string);
+            dataGridView1.DataSource = member_table.ResultData;
         }
     }
 }
