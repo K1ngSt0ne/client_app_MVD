@@ -29,6 +29,7 @@ namespace client_app_MVD
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.главнаяToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.информацияОToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,6 +139,8 @@ namespace client_app_MVD
             this.panel10 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -149,6 +152,8 @@ namespace client_app_MVD
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -253,13 +258,13 @@ namespace client_app_MVD
             // картотекаToolStripMenuItem
             // 
             this.картотекаToolStripMenuItem.Name = "картотекаToolStripMenuItem";
-            this.картотекаToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.картотекаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.картотекаToolStripMenuItem.Text = "Картотека";
             // 
             // вводСобытияToolStripMenuItem
             // 
             this.вводСобытияToolStripMenuItem.Name = "вводСобытияToolStripMenuItem";
-            this.вводСобытияToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.вводСобытияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.вводСобытияToolStripMenuItem.Text = "Ввод события";
             // 
             // аналитикаToolStripMenuItem1
@@ -274,7 +279,7 @@ namespace client_app_MVD
             // запросикиToolStripMenuItem
             // 
             this.запросикиToolStripMenuItem.Name = "запросикиToolStripMenuItem";
-            this.запросикиToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.запросикиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.запросикиToolStripMenuItem.Text = "запросики*";
             // 
             // служебнаяИнформацияToolStripMenuItem1
@@ -1182,11 +1187,44 @@ namespace client_app_MVD
             this.label28.TabIndex = 0;
             this.label28.Text = "КодФормыПоступления";
             // 
+            // panel11
+            // 
+            this.panel11.AutoScroll = true;
+            this.panel11.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel11.Controls.Add(this.dataGridView1);
+            this.panel11.Location = new System.Drawing.Point(34, 24);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(722, 358);
+            this.panel11.TabIndex = 11;
+            this.panel11.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(26, 16);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(579, 284);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 457);
+            this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
@@ -1224,6 +1262,8 @@ namespace client_app_MVD
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1340,6 +1380,8 @@ namespace client_app_MVD
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

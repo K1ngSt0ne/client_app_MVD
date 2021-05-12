@@ -365,7 +365,11 @@ namespace client_app_MVD
 
         private void personal_table_view(object sender, EventArgs e)
         {
-
+            panel11.Visible = true;
+            panel11.BringToFront();
+            var personal_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from personal_table;", conncetion_string);
+            dataGridView1.DataSource = personal_table.ResultData;
+            
         }
 
         private void forms_entrance_view(object sender, EventArgs e)
