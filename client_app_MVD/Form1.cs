@@ -300,7 +300,7 @@ namespace client_app_MVD
         {
             panel13.Visible = true;
             panel13.BringToFront();
-            var applicants_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from applicants_ivent;", conncetion_string);
+            var applicants_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from applicants_table;", conncetion_string);
             dataGridView3.DataSource = applicants_table.ResultData;
         }
 
