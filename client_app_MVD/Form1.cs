@@ -367,9 +367,10 @@ namespace client_app_MVD
         {
             panel11.Visible = true;
             panel11.BringToFront();
-            var personal_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from personal_table;", conncetion_string);
+            var personal_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from members_ivent;", conncetion_string);
             dataGridView1.DataSource = personal_table.ResultData;
-            
+            //select last_name, first_name, patronymic, Date_of_birth from personal_table
+
         }
 
         private void forms_entrance_view(object sender, EventArgs e)
@@ -378,6 +379,11 @@ namespace client_app_MVD
             panel10.BringToFront();
             var forms_entrance = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_form_entrance, form_name from forms_entrance_table;", conncetion_string);
             datatable_see(forms_entrance, 20, 58, 100, panel10);
+        }
+
+        private void members_ivent_view(object sender, EventArgs e)
+        {
+
         }
     }
 }

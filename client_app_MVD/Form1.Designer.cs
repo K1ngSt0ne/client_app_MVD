@@ -134,8 +134,8 @@ namespace client_app_MVD
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -245,6 +245,7 @@ namespace client_app_MVD
             this.просмотрВсехУчастниковToolStripMenuItem.Name = "просмотрВсехУчастниковToolStripMenuItem";
             this.просмотрВсехУчастниковToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.просмотрВсехУчастниковToolStripMenuItem.Text = "Просмотр всех участников";
+            this.просмотрВсехУчастниковToolStripMenuItem.Click += new System.EventHandler(this.members_ivent_view);
             // 
             // событияToolStripMenuItem1
             // 
@@ -258,13 +259,13 @@ namespace client_app_MVD
             // картотекаToolStripMenuItem
             // 
             this.картотекаToolStripMenuItem.Name = "картотекаToolStripMenuItem";
-            this.картотекаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.картотекаToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.картотекаToolStripMenuItem.Text = "Картотека";
             // 
             // вводСобытияToolStripMenuItem
             // 
             this.вводСобытияToolStripMenuItem.Name = "вводСобытияToolStripMenuItem";
-            this.вводСобытияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.вводСобытияToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.вводСобытияToolStripMenuItem.Text = "Ввод события";
             // 
             // аналитикаToolStripMenuItem1
@@ -279,7 +280,7 @@ namespace client_app_MVD
             // запросикиToolStripMenuItem
             // 
             this.запросикиToolStripMenuItem.Name = "запросикиToolStripMenuItem";
-            this.запросикиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.запросикиToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.запросикиToolStripMenuItem.Text = "запросики*";
             // 
             // служебнаяИнформацияToolStripMenuItem1
@@ -1130,17 +1131,6 @@ namespace client_app_MVD
             this.panel9.TabIndex = 9;
             this.panel9.Visible = false;
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label25.Location = new System.Drawing.Point(14, 14);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(202, 24);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Название должности";
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -1152,6 +1142,17 @@ namespace client_app_MVD
             this.label26.TabIndex = 1;
             this.label26.Text = "Обязанности";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label25.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label25.Location = new System.Drawing.Point(14, 14);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(202, 24);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Название должности";
+            // 
             // panel10
             // 
             this.panel10.AutoScroll = true;
@@ -1159,9 +1160,9 @@ namespace client_app_MVD
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel10.Controls.Add(this.label27);
             this.panel10.Controls.Add(this.label28);
-            this.panel10.Location = new System.Drawing.Point(12, 26);
+            this.panel10.Location = new System.Drawing.Point(20, 26);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(722, 358);
+            this.panel10.Size = new System.Drawing.Size(722, 353);
             this.panel10.TabIndex = 10;
             this.panel10.Visible = false;
             // 
@@ -1193,9 +1194,9 @@ namespace client_app_MVD
             this.panel11.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel11.Controls.Add(this.dataGridView1);
-            this.panel11.Location = new System.Drawing.Point(34, 24);
+            this.panel11.Location = new System.Drawing.Point(12, 27);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(722, 358);
+            this.panel11.Size = new System.Drawing.Size(498, 290);
             this.panel11.TabIndex = 11;
             this.panel11.Visible = false;
             // 
@@ -1213,10 +1214,10 @@ namespace client_app_MVD
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 16);
+            this.dataGridView1.Location = new System.Drawing.Point(3, -2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(579, 284);
+            this.dataGridView1.Size = new System.Drawing.Size(485, 284);
             this.dataGridView1.TabIndex = 0;
             // 
             // Form1
@@ -1224,8 +1225,8 @@ namespace client_app_MVD
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 457);
-            this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
