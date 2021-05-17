@@ -216,7 +216,8 @@ namespace client_app_MVD
                                 break;
                         }
                         panel1.Visible = false;
-
+                        авторизацияToolStripMenuItem.Visible = false;
+                        регистрацияToolStripMenuItem.Visible = false;
                     }    
                     else
                     {
