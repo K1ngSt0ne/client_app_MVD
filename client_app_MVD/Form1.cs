@@ -400,5 +400,20 @@ namespace client_app_MVD
             var application_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_application,type_incident_table.incident_name, applications_table.entrance_date,status_application.status_application_name,applicants_table.last_name from applications_table inner join type_incident_table on applications_table.id_type_incident = type_incident_table.id_type_incident inner join status_application on applications_table.id_status_application = status_application.id_status_application inner join applicants_table on applications_table.id_applicant = applicants_table.id_applicant;", conncetion_string);
             dataGridView4.DataSource = application_table.ResultData;
         }
+
+        private void added_applicant(object sender, EventArgs e)
+        {
+
+        }
+
+        private void added_member_ivent(object sender, EventArgs e)
+        {
+
+        }
+
+        private void added_application(object sender, EventArgs e)
+        {
+
+        }
     }
 }
