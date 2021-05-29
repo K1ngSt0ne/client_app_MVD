@@ -408,18 +408,31 @@ namespace client_app_MVD
         //Добавление участников события
         private void added_member_ivent(object sender, EventArgs e)
         {
-
+            panel16.Visible = true;
         }
         //ДОбавление события
         private void added_application(object sender, EventArgs e)
         {
 
         }
-        //Добавление заявителя
+        //Добавление заявителя, нужен триггер на таблицу
         private void added_applicant_table(object sender, EventArgs e)
         {
             var added_data = dateTimePicker1.Value.Year.ToString() + "-"+dateTimePicker1.Value.Month.ToString() +"-"+ dateTimePicker1.Value.Day.ToString();
             var added_aplicant = MySQLData.MySqlExecute.SqlNoneQuery("call mvd_database_course_work.added_applicant('"+ textBox16.Text + "', '"+ textBox15.Text+"', '"+ textBox14.Text +"', '"+ textBox10.Text+"', '"+ textBox11.Text +"', '" + added_data + "');", conncetion_string);
+            if (added_aplicant.HasError)
+                MessageBox.Show(added_aplicant.ErrorText);
+            else
+            {
+                MessageBox.Show("Успешно!", "Уведомление");
+                panel15.Visible = false;
+            }
+        }
+
+        private void added_member_ivent_table(object sender, EventArgs e)
+        {
+            var added_data = dateTimePicker1.Value.Year.ToString() + "-" + dateTimePicker1.Value.Month.ToString() + "-" + dateTimePicker1.Value.Day.ToString();
+            var added_aplicant = MySQLData.MySqlExecute.SqlNoneQuery("call mvd_database_course_work.added_('" + textBox16.Text + "', '" + textBox15.Text + "', '" + textBox14.Text + "', '" + textBox10.Text + "', '" + textBox11.Text + "', '" + added_data + "');", conncetion_string);
             if (added_aplicant.HasError)
                 MessageBox.Show(added_aplicant.ErrorText);
             else
