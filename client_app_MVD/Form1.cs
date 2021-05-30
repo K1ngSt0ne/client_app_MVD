@@ -413,7 +413,8 @@ namespace client_app_MVD
         //ДОбавление события
         private void added_application(object sender, EventArgs e)
         {
-
+            //добавление нового заявления
+            panel17.Visible = true;
         }
         //Добавление заявителя, нужен триггер на таблицу
         private void added_applicant_table(object sender, EventArgs e)
@@ -438,7 +439,7 @@ namespace client_app_MVD
             else
             {
                 MessageBox.Show("Успешно!", "Уведомление");
-                panel15.Visible = false;
+                panel16.Visible = false;
             }
         }
     }
