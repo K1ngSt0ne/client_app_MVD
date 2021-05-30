@@ -453,14 +453,26 @@ namespace client_app_MVD
 
         private void added_member_ivent_table(object sender, EventArgs e)
         {
-            var added_data = dateTimePicker1.Value.Year.ToString() + "-" + dateTimePicker1.Value.Month.ToString() + "-" + dateTimePicker1.Value.Day.ToString();
-            var added_aplicant = MySQLData.MySqlExecute.SqlNoneQuery("call mvd_database_course_work.added_('" + textBox16.Text + "', '" + textBox15.Text + "', '" + textBox14.Text + "', '" + textBox10.Text + "', '" + textBox11.Text + "', '" + added_data + "');", conncetion_string);
+            var added_data = dateTimePicker2.Value.Year.ToString() + "-" + dateTimePicker2.Value.Month.ToString() + "-" + dateTimePicker2.Value.Day.ToString();
+            var added_aplicant = MySQLData.MySqlExecute.SqlNoneQuery("call mvd_database_course_work.added_member_ivent('" + textBox16.Text + "', '" + textBox15.Text + "', '" + textBox14.Text + "', '" + textBox10.Text + "', '" + textBox11.Text + "', '" + added_data + "');", conncetion_string);
             if (added_aplicant.HasError)
                 MessageBox.Show(added_aplicant.ErrorText);
             else
             {
                 MessageBox.Show("Успешно!", "Уведомление");
                 panel16.Visible = false;
+            }
+        }
+        private void added_application_table(object sender, EventArgs e)
+        {
+            var added_data = dateTimePicker3.Value.Year.ToString() + "-" + dateTimePicker3.Value.Month.ToString() + "-" + dateTimePicker3.Value.Day.ToString();
+            var added_application = MySQLData.MySqlExecute.SqlNoneQuery("call mvd_database_course_work.entrance_KUSP("+ comboBox1.SelectedIndex + "," + comboBox2.SelectedIndex + ", "+ added_data+ " " + comboBox3.SelectedIndex + "," + comboBox4.SelectedIndex + "," + comboBox5.SelectedIndex + "," + comboBox6.SelectedIndex + "," + comboBox7.SelectedIndex + ", "+textBox13.Text+")", conncetion_string);
+            if (added_application.HasError)
+                MessageBox.Show(added_application.ErrorText);
+            else
+            {
+                MessageBox.Show("Успешно!", "Уведомление");
+                panel17.Visible = false;
             }
         }
     }
