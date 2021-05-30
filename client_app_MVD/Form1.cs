@@ -415,6 +415,11 @@ namespace client_app_MVD
         {
             //добавление нового заявления
             panel17.Visible = true;
+            var type_incident_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_type_incident, incident_name FROM mvd_database_course_work.type_incident_table;", conncetion_string);
+            comboBox1.DataSource = type_incident_table.ResultData;
+            comboBox1.DisplayMember = "incident_name";
+            comboBox1.ValueMember = "id_type_incident";
+            // string value_of_combobox = Convert.ToString(comboBox1.SelectedItem);
         }
         //Добавление заявителя, нужен триггер на таблицу
         private void added_applicant_table(object sender, EventArgs e)
