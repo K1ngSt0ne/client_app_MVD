@@ -429,12 +429,12 @@ namespace client_app_MVD
             var form_entrance_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_form_entrance,form_name FROM mvd_database_course_work.forms_entrance_table;", conncetion_string);
             var form_reaction_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_reaction_form,reacion_name FROM mvd_database_course_work.reaction_form_table;", conncetion_string);
             combobox_items_added(type_incident_table, comboBox1, "incident_name", "id_type_incident");
-            /*combobox_items_added(time_rewiew_table,comboBox6;
-            combobox_items_added(applicant_table,comboBox3,);
-            combobox_items_added(status_application_table, comboBox2);
-            combobox_items_added(personal_table,comboBox4,);
-            combobox_items_added(form_entrance_table,comboBox5,);
-            combobox_items_added(form_reaction_table,comboBox7,);*/
+            combobox_items_added(time_rewiew_table,comboBox6, "how_long_days", "id_time_review");
+            combobox_items_added(applicant_table,comboBox3,"last_name","id_applicant");
+            combobox_items_added(status_application_table, comboBox2, "status_application_name", "id_status_application");
+            combobox_items_added(personal_table,comboBox4,"last_name","id_personal");
+            combobox_items_added(form_entrance_table,comboBox5, "form_name", "id_form_entrance");
+            combobox_items_added(form_reaction_table,comboBox7, "reacion_name", "id_reaction_form");
             // string value_of_combobox = Convert.ToString(comboBox1.SelectedItem);
         }
         //Добавление заявителя, нужен триггер на таблицу
