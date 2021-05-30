@@ -410,15 +410,31 @@ namespace client_app_MVD
         {
             panel16.Visible = true;
         }
+        void combobox_items_added(MySQLData.MySqlExecuteData.MyResultData myResultData, ComboBox comboBox, string displaymember, string valuemember)
+        {
+            comboBox.DataSource = myResultData.ResultData;
+            comboBox.DisplayMember = displaymember;
+            comboBox.ValueMember = valuemember;
+        }
         //ДОбавление события
         private void added_application(object sender, EventArgs e)
         {
             //добавление нового заявления
             panel17.Visible = true;
             var type_incident_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_type_incident, incident_name FROM mvd_database_course_work.type_incident_table;", conncetion_string);
-            comboBox1.DataSource = type_incident_table.ResultData;
-            comboBox1.DisplayMember = "incident_name";
-            comboBox1.ValueMember = "id_type_incident";
+            var time_rewiew_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_time_review,how_long_days FROM mvd_database_course_work.time_review_table;", conncetion_string);
+            var applicant_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_applicant, last_name FROM mvd_database_course_work.applicants_table;", conncetion_string);
+            var status_application_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_status_application,status_application_name FROM mvd_database_course_work.status_application;", conncetion_string);
+            var personal_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_personal, last_name FROM mvd_database_course_work.personal_table;", conncetion_string);
+            var form_entrance_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_form_entrance,form_name FROM mvd_database_course_work.forms_entrance_table;", conncetion_string);
+            var form_reaction_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_reaction_form,reacion_name FROM mvd_database_course_work.reaction_form_table;", conncetion_string);
+            combobox_items_added(type_incident_table, comboBox1, "incident_name", "id_type_incident");
+            /*combobox_items_added(time_rewiew_table,comboBox6;
+            combobox_items_added(applicant_table,comboBox3,);
+            combobox_items_added(status_application_table, comboBox2);
+            combobox_items_added(personal_table,comboBox4,);
+            combobox_items_added(form_entrance_table,comboBox5,);
+            combobox_items_added(form_reaction_table,comboBox7,);*/
             // string value_of_combobox = Convert.ToString(comboBox1.SelectedItem);
         }
         //Добавление заявителя, нужен триггер на таблицу
