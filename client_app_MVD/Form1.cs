@@ -465,8 +465,9 @@ namespace client_app_MVD
         }
         private void added_application_table(object sender, EventArgs e)
         {
+            var test = comboBox1.SelectedIndex;
             var added_data = dateTimePicker3.Value.Year.ToString() + "-" + dateTimePicker3.Value.Month.ToString() + "-" + dateTimePicker3.Value.Day.ToString();
-            var added_application = MySQLData.MySqlExecute.SqlNoneQuery("call mvd_database_course_work.entrance_KUSP("+ comboBox1.SelectedIndex + "," + comboBox2.SelectedIndex + ", "+ added_data+ " " + comboBox3.SelectedIndex + "," + comboBox4.SelectedIndex + "," + comboBox5.SelectedIndex + "," + comboBox6.SelectedIndex + "," + comboBox7.SelectedIndex + ", "+textBox13.Text+")", conncetion_string);
+            var added_application = MySQLData.MySqlExecute.SqlNoneQuery("call mvd_database_course_work.entrance_KUSP("+ comboBox1.SelectedIndex+1 + "," + comboBox2.SelectedIndex+1 + ", "+ added_data + ", " + comboBox3.SelectedIndex+1 + ", " + comboBox4.SelectedIndex+1 + ", " + comboBox5.SelectedIndex+1 + ", " + comboBox6.SelectedIndex+1 + ", " + comboBox7.SelectedIndex+1 + ", "+textBox13.Text+")", conncetion_string);
             if (added_application.HasError)
                 MessageBox.Show(added_application.ErrorText);
             else
