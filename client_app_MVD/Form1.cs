@@ -169,7 +169,7 @@ namespace client_app_MVD
         private void cancel_operation(object sender, EventArgs e)
         {
             MessageBox.Show("Операция отменена", "Уведомление");
-            panel1.Visible =panel4.Visible=  panel15.Visible=false;
+            panel1.Visible =panel4.Visible=  panel15.Visible=panel18.Visible=false;
             
         }
         //работающая авторизация
@@ -474,6 +474,63 @@ namespace client_app_MVD
                 MessageBox.Show("Успешно!", "Уведомление");
                 panel17.Visible = false;
             }
+        }
+        //блок аналитической информации
+        private void selected_age_of_member_ivent(object sender, EventArgs e)
+        {
+            //MySQLData.MySqlExecuteData.MyResultData myResultData
+            //var age_of_member_ivent;
+            //var test = analytics_procedure("Возраст");
+            analitycs_view("Возраст");
+        }
+
+        private void selected_applications(object sender, EventArgs e)
+        {
+            //analytics_procedure("Дата1");
+            analitycs_view("Дата1");
+        }
+
+        private void incident_information(object sender, EventArgs e)
+        {
+            //analytics_procedure("Дата2");
+            analitycs_view("Дата2");
+        }
+        void analitycs_view(string name)
+        {
+            switch (name)
+            {
+                case "Дата1":
+                    break;
+                case "Дата2":
+                    break;
+                case "Возраст":
+                    label54.Text = "Возраст с";
+                    label54.Text = "Возраст по";
+                    maskedTextBox1.Mask = maskedTextBox2.Mask = "000";                   
+                    break;
+            }
+        }
+        MySQLData.MySqlExecuteData.MyResultData analytics_procedure(string name)
+        {
+            // MySQLData.MySqlExecuteData.MyResultData test1;
+            MySQLData.MySqlExecuteData.MyResultData resultData=null;
+            panel18.Visible = true;
+            switch (name)
+            {
+                case "Дата1":
+                    break;
+                case "Дата2":
+                    break;
+                case "Возраст":
+                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_age_of_members_ivent("+maskedTextBox1.Text+", "+maskedTextBox2.Text+");", conncetion_string);
+                    break;
+            }
+            return resultData;            
+        }
+
+        private void analytics_click(object sender, EventArgs e)
+        {
+
         }
     }
 }

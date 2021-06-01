@@ -185,6 +185,17 @@ namespace client_app_MVD
             this.button11 = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -195,17 +206,14 @@ namespace client_app_MVD
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.label49 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label52 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -228,6 +236,7 @@ namespace client_app_MVD
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -335,14 +344,14 @@ namespace client_app_MVD
             // картотекаToolStripMenuItem
             // 
             this.картотекаToolStripMenuItem.Name = "картотекаToolStripMenuItem";
-            this.картотекаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.картотекаToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.картотекаToolStripMenuItem.Text = "Картотека";
             this.картотекаToolStripMenuItem.Click += new System.EventHandler(this.application_view);
             // 
             // вводСобытияToolStripMenuItem
             // 
             this.вводСобытияToolStripMenuItem.Name = "вводСобытияToolStripMenuItem";
-            this.вводСобытияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.вводСобытияToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.вводСобытияToolStripMenuItem.Text = "Ввод события";
             this.вводСобытияToolStripMenuItem.Click += new System.EventHandler(this.added_application);
             // 
@@ -362,18 +371,21 @@ namespace client_app_MVD
             this.запросикиToolStripMenuItem.Name = "запросикиToolStripMenuItem";
             this.запросикиToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.запросикиToolStripMenuItem.Text = "Информация по делам";
+            this.запросикиToolStripMenuItem.Click += new System.EventHandler(this.incident_information);
             // 
             // отборЗаявленийПоДатеToolStripMenuItem
             // 
             this.отборЗаявленийПоДатеToolStripMenuItem.Name = "отборЗаявленийПоДатеToolStripMenuItem";
             this.отборЗаявленийПоДатеToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.отборЗаявленийПоДатеToolStripMenuItem.Text = "Отбор заявлений по дате";
+            this.отборЗаявленийПоДатеToolStripMenuItem.Click += new System.EventHandler(this.selected_applications);
             // 
             // возрастУчастниковСобытияToolStripMenuItem
             // 
             this.возрастУчастниковСобытияToolStripMenuItem.Name = "возрастУчастниковСобытияToolStripMenuItem";
             this.возрастУчастниковСобытияToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.возрастУчастниковСобытияToolStripMenuItem.Text = "Возраст участников события";
+            this.возрастУчастниковСобытияToolStripMenuItem.Click += new System.EventHandler(this.selected_age_of_member_ivent);
             // 
             // служебнаяИнформацияToolStripMenuItem1
             // 
@@ -1778,6 +1790,113 @@ namespace client_app_MVD
             this.panel17.TabIndex = 17;
             this.panel17.Visible = false;
             // 
+            // comboBox7
+            // 
+            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(592, 177);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(224, 28);
+            this.comboBox7.TabIndex = 29;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label52.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label52.Location = new System.Drawing.Point(437, 177);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(141, 20);
+            this.label52.TabIndex = 28;
+            this.label52.Text = "Форма реакции";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(306, 174);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(100, 28);
+            this.comboBox6.TabIndex = 27;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label51.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label51.Location = new System.Drawing.Point(18, 174);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(274, 20);
+            this.label51.TabIndex = 26;
+            this.label51.Text = "Время рассмотрения (в сутках)";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(596, 131);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(224, 28);
+            this.comboBox5.TabIndex = 25;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label50.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label50.Location = new System.Drawing.Point(398, 130);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(180, 20);
+            this.label50.TabIndex = 24;
+            this.label50.Text = "Форма поступления";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(125, 132);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(224, 28);
+            this.comboBox4.TabIndex = 23;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label37.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label37.Location = new System.Drawing.Point(10, 132);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(100, 20);
+            this.label37.TabIndex = 22;
+            this.label37.Text = "Сотрудник";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(596, 86);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(224, 28);
+            this.comboBox3.TabIndex = 21;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(633, 48);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(154, 28);
+            this.comboBox2.TabIndex = 20;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(187, 51);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(224, 28);
+            this.comboBox1.TabIndex = 19;
+            // 
             // label44
             // 
             this.label44.AutoSize = true;
@@ -1884,118 +2003,103 @@ namespace client_app_MVD
             this.label49.TabIndex = 0;
             this.label49.Text = "Процедура добавления нового заявления. Пожалуйтса, заполните поля! \r\n\r\n";
             // 
-            // comboBox1
+            // panel18
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(187, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(224, 28);
-            this.comboBox1.TabIndex = 19;
+            this.panel18.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel18.Controls.Add(this.maskedTextBox2);
+            this.panel18.Controls.Add(this.maskedTextBox1);
+            this.panel18.Controls.Add(this.button15);
+            this.panel18.Controls.Add(this.button14);
+            this.panel18.Controls.Add(this.label55);
+            this.panel18.Controls.Add(this.label54);
+            this.panel18.Controls.Add(this.label53);
+            this.panel18.Location = new System.Drawing.Point(190, 120);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(500, 200);
+            this.panel18.TabIndex = 18;
+            this.panel18.Visible = false;
             // 
-            // comboBox2
+            // label53
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(633, 48);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(154, 28);
-            this.comboBox2.TabIndex = 20;
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label53.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label53.Location = new System.Drawing.Point(176, 11);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(160, 24);
+            this.label53.TabIndex = 0;
+            this.label53.Text = "Введите период";
             // 
-            // comboBox3
+            // label54
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(596, 86);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(224, 28);
-            this.comboBox3.TabIndex = 21;
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label54.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label54.Location = new System.Drawing.Point(34, 53);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(69, 24);
+            this.label54.TabIndex = 1;
+            this.label54.Text = "Дата с";
             // 
-            // comboBox4
+            // label55
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(125, 132);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(224, 28);
-            this.comboBox4.TabIndex = 23;
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label55.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label55.Location = new System.Drawing.Point(34, 107);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(81, 24);
+            this.label55.TabIndex = 2;
+            this.label55.Text = "Дата по";
             // 
-            // label37
+            // button14
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label37.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label37.Location = new System.Drawing.Point(10, 132);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(100, 20);
-            this.label37.TabIndex = 22;
-            this.label37.Text = "Сотрудник";
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button14.Location = new System.Drawing.Point(71, 146);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(118, 45);
+            this.button14.TabIndex = 5;
+            this.button14.Text = "Принять";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.analytics_click);
             // 
-            // comboBox5
+            // button15
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(596, 131);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(224, 28);
-            this.comboBox5.TabIndex = 25;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button15.Location = new System.Drawing.Point(298, 146);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(118, 45);
+            this.button15.TabIndex = 6;
+            this.button15.Text = "Отказ";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.cancel_operation);
             // 
-            // label50
+            // maskedTextBox1
             // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label50.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label50.Location = new System.Drawing.Point(398, 130);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(180, 20);
-            this.label50.TabIndex = 24;
-            this.label50.Text = "Форма поступления";
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(150, 50);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(108, 29);
+            this.maskedTextBox1.TabIndex = 7;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
-            // comboBox6
+            // maskedTextBox2
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(306, 174);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(100, 28);
-            this.comboBox6.TabIndex = 27;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label51.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label51.Location = new System.Drawing.Point(18, 174);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(274, 20);
-            this.label51.TabIndex = 26;
-            this.label51.Text = "Время рассмотрения (в сутках)";
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(592, 177);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(224, 28);
-            this.comboBox7.TabIndex = 29;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label52.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label52.Location = new System.Drawing.Point(437, 177);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(141, 20);
-            this.label52.TabIndex = 28;
-            this.label52.Text = "Форма реакции";
+            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.maskedTextBox2.Location = new System.Drawing.Point(150, 105);
+            this.maskedTextBox2.Mask = "00/00/0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(108, 29);
+            this.maskedTextBox2.TabIndex = 8;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 473);
+            this.Controls.Add(this.panel18);
             this.Controls.Add(this.panel17);
             this.Controls.Add(this.panel16);
             this.Controls.Add(this.panel15);
@@ -2054,6 +2158,8 @@ namespace client_app_MVD
             this.panel16.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2233,6 +2339,14 @@ namespace client_app_MVD
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
     }
 }
 
