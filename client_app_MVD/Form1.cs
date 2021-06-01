@@ -475,33 +475,33 @@ namespace client_app_MVD
                 panel17.Visible = false;
             }
         }
-        //блок аналитической информации
+
         private void selected_age_of_member_ivent(object sender, EventArgs e)
         {
-            //MySQLData.MySqlExecuteData.MyResultData myResultData
-            //var age_of_member_ivent;
-            //var test = analytics_procedure("Возраст");
+
             analitycs_view("Возраст");
         }
 
         private void selected_applications(object sender, EventArgs e)
         {
-            //analytics_procedure("Дата1");
+
             analitycs_view("Дата1");
         }
 
         private void incident_information(object sender, EventArgs e)
         {
-            //analytics_procedure("Дата2");
+
             analitycs_view("Дата2");
         }
         void analitycs_view(string name)
         {
+            panel18.Visible = true;
             switch (name)
             {
                 case "Дата1":
                     break;
                 case "Дата2":
+                    label54.Text = "Дата  с";
                     break;
                 case "Возраст":
                     label54.Text = "Возраст с";
@@ -510,27 +510,36 @@ namespace client_app_MVD
                     break;
             }
         }
-        MySQLData.MySqlExecuteData.MyResultData analytics_procedure(string name)
-        {
-            // MySQLData.MySqlExecuteData.MyResultData test1;
-            MySQLData.MySqlExecuteData.MyResultData resultData=null;
-            panel18.Visible = true;
-            switch (name)
-            {
-                case "Дата1":
-                    break;
-                case "Дата2":
-                    break;
-                case "Возраст":
-                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_age_of_members_ivent("+maskedTextBox1.Text+", "+maskedTextBox2.Text+");", conncetion_string);
-                    break;
-            }
-            return resultData;            
-        }
-
         private void analytics_click(object sender, EventArgs e)
         {
-
+            MySQLData.MySqlExecuteData.MyResultData resultData=null;
+            panel18.Visible = false;
+            string date1 = "";
+            string date2 = "";
+            switch (label54.Text)
+            {
+                case "Дата с":
+                    date1 = parse_str_to_datetime(maskedTextBox1.Text);
+                    date2 = parse_str_to_datetime(maskedTextBox2.Text);
+                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.incident_information_from_to('"+date1+"', '"+date2+"');", conncetion_string);
+                    break;
+                case "Дата  с":
+                    date1 = parse_str_to_datetime(maskedTextBox1.Text);
+                    date2 = parse_str_to_datetime(maskedTextBox2.Text);
+                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_applications(" + date1 + ", " + date2 + ");", conncetion_string);
+                    break;
+                case "Возраст с":
+                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_age_of_members_ivent(" + maskedTextBox1.Text + ", " + maskedTextBox2.Text + ");", conncetion_string);
+                    break;
+            }
+            dataGridView5.DataSource = resultData.ResultData;
+            panel19.Visible = true;
+        }
+        string parse_str_to_datetime(string date)
+        {
+            DateTime dateTime = DateTime.Parse(date);
+            string new_datetime = dateTime.Year + "-" + dateTime.Month + "-" + dateTime.Day;
+            return new_datetime;
         }
     }
 }
