@@ -521,19 +521,26 @@ namespace client_app_MVD
                 case "Дата с":
                     date1 = parse_str_to_datetime(maskedTextBox1.Text);
                     date2 = parse_str_to_datetime(maskedTextBox2.Text);
-                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.incident_information_from_to('"+date1+"', '"+date2+"');", conncetion_string);
+                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.incident_information_from_to('" + date1 + "', '" + date2 + "');", conncetion_string);
                     break;
                 case "Дата  с":
                     date1 = parse_str_to_datetime(maskedTextBox1.Text);
                     date2 = parse_str_to_datetime(maskedTextBox2.Text);
-                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_applications(" + date1 + ", " + date2 + ");", conncetion_string);
+                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_applications('" + date1 + "', '" + date2 + "');", conncetion_string);
                     break;
                 case "Возраст с":
-                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_age_of_members_ivent(" + maskedTextBox1.Text + ", " + maskedTextBox2.Text + ");", conncetion_string);
+                    int age_left = Convert.ToInt32(maskedTextBox1.Text);
+                    int age_right = Convert.ToInt32(maskedTextBox2.Text);
+                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_age_of_members_ivent(" + age_left + ", " + age_right + ");", conncetion_string);
                     break;
             }
-            dataGridView5.DataSource = resultData.ResultData;
-            panel19.Visible = true;
+            if (resultData.HasError)
+                MessageBox.Show(resultData.ErrorText);
+            else
+            {
+                dataGridView5.DataSource = resultData.ResultData;
+                panel19.Visible = true;
+            }
         }
         string parse_str_to_datetime(string date)
         {
