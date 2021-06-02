@@ -174,7 +174,9 @@ namespace client_app_MVD
         {
             MessageBox.Show("Операция отменена", "Уведомление");
             panel1.Visible =panel4.Visible=  panel15.Visible=panel18.Visible=panel20.Visible=false;
-            
+            dataGrid_columns_name.Clear();
+            textBox20.Text = "";
+            comboBox8.Items.Clear();            
         }
         //работающая авторизация
         private void access_to_database(object sender, EventArgs e)
@@ -563,7 +565,10 @@ namespace client_app_MVD
             {
                 dataGrid_columns_name.Add(current_dataGrid.Columns[i].HeaderCell.Value);
             }
-            comboBox8.DataSource = dataGrid_columns_name;
+            for (int i=0; i<dataGrid_columns_name.Count;i++)
+            {
+                comboBox8.Items.Add(dataGrid_columns_name[i]);
+            }           
         }
         private void find_rows_in_datagrid(object sender, EventArgs e)
         {
