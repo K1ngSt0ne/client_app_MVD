@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections;//для ArrayList
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
 
@@ -20,7 +21,10 @@ namespace client_app_MVD
             InitializeComponent();
             
         }
+        //глобальные переменные
         string conncetion_string = "server=localhost;user=root;password=12345;database=mvd_database_course_work;port=3306";
+        ArrayList dataGrid_columns_name = new ArrayList();
+        DataGrid current_dataGrid = new DataGrid();
         public class MySQLData
         {
             //класс для выполнения запросов
@@ -138,7 +142,7 @@ namespace client_app_MVD
                 }
 
             }        
-    }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -169,7 +173,7 @@ namespace client_app_MVD
         private void cancel_operation(object sender, EventArgs e)
         {
             MessageBox.Show("Операция отменена", "Уведомление");
-            panel1.Visible =panel4.Visible=  panel15.Visible=panel18.Visible=false;
+            panel1.Visible =panel4.Visible=  panel15.Visible=panel18.Visible=panel20.Visible=false;
             
         }
         //работающая авторизация
@@ -478,19 +482,16 @@ namespace client_app_MVD
 
         private void selected_age_of_member_ivent(object sender, EventArgs e)
         {
-
             analitycs_view("Возраст");
         }
 
         private void selected_applications(object sender, EventArgs e)
         {
-
             analitycs_view("Дата1");
         }
 
         private void incident_information(object sender, EventArgs e)
         {
-
             analitycs_view("Дата2");
         }
         void analitycs_view(string name)
@@ -505,7 +506,7 @@ namespace client_app_MVD
                     break;
                 case "Возраст":
                     label54.Text = "Возраст с";
-                    label54.Text = "Возраст по";
+                    label55.Text = "Возраст по";
                     maskedTextBox1.Mask = maskedTextBox2.Mask = "000";                   
                     break;
             }
@@ -529,17 +530,18 @@ namespace client_app_MVD
                     resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_applications('" + date1 + "', '" + date2 + "');", conncetion_string);
                     break;
                 case "Возраст с":
-                    int age_left = Convert.ToInt32(maskedTextBox1.Text);
-                    int age_right = Convert.ToInt32(maskedTextBox2.Text);
-                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_age_of_members_ivent(" + age_left + ", " + age_right + ");", conncetion_string);
+                    date1 = maskedTextBox1.Text;
+                    date2 = maskedTextBox2.Text;
+                    resultData = MySQLData.MySqlExecuteData.SqlReturnDataset("call mvd_database_course_work.selected_age_of_members_ivent(" + date1 + ", " + date2+ ");", conncetion_string);
                     break;
             }
             if (resultData.HasError)
                 MessageBox.Show(resultData.ErrorText);
             else
             {
-                dataGridView5.DataSource = resultData.ResultData;
+                dataGridView5.DataSource = resultData.ResultData;                
                 panel19.Visible = true;
+                panel19.BringToFront();
             }
         }
         string parse_str_to_datetime(string date)
@@ -547,6 +549,46 @@ namespace client_app_MVD
             DateTime dateTime = DateTime.Parse(date);
             string new_datetime = dateTime.Year + "-" + dateTime.Month + "-" + dateTime.Day;
             return new_datetime;
+        }
+
+        private void find_rows(object sender, EventArgs e)
+        {
+            panel20.Visible = true;    
+
+            for (int i = 0; (i <= (dataGridView5.Columns.Count - 1)); i++)
+            {
+                dataGrid_columns_name.Add(dataGridView5.Columns[i].HeaderCell.Value);
+            }
+            comboBox8.DataSource = dataGrid_columns_name;
+        }
+        private void find_rows_in_datagrid(object sender, EventArgs e)
+        {
+            var column_index=dataGrid_columns_name.IndexOf(comboBox8.SelectedItem);
+            if (textBox20.Text != "")
+            {
+                for (int i = 0; i < dataGridView5.RowCount; i++)
+                {
+                    dataGridView5.Rows[i].Selected = false;
+                    if (dataGridView5.Rows[i].Cells[column_index].Value != null)
+                    {
+                        if (dataGridView5.Rows[i].Cells[column_index].Value.ToString().ToLower().Contains(textBox20.Text.ToLower()))
+                        {
+                            dataGridView5.Rows[i].Cells[column_index].Style.BackColor = Color.Red;
+                        }
+                        else
+                        {
+                            dataGridView5.Rows[i].Cells[column_index].Style.BackColor = Color.White;
+                        }
+                    }
+                }
+            }
+        
+            else
+            {
+                for (int i = 0; i < dataGridView5.RowCount; i++)
+                    for (int j = 0; j < dataGridView5.ColumnCount; j++)
+                        dataGridView5.Rows[i].Cells[j].Style.BackColor = Color.White;
+            }
         }
     }
 }
