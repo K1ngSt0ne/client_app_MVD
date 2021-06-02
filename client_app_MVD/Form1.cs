@@ -24,7 +24,7 @@ namespace client_app_MVD
         //глобальные переменные
         string conncetion_string = "server=localhost;user=root;password=12345;database=mvd_database_course_work;port=3306";
         ArrayList dataGrid_columns_name = new ArrayList();
-        DataGrid current_dataGrid = new DataGrid();
+        DataGridView current_dataGrid = new DataGridView();
         public class MySQLData
         {
             //класс для выполнения запросов
@@ -307,6 +307,7 @@ namespace client_app_MVD
             panel13.BringToFront();
             var applicants_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from applicants_table;", conncetion_string);
             dataGridView3.DataSource = applicants_table.ResultData;
+            current_dataGrid = dataGridView3;
         }
 
         private void see_ranks_table(object sender, EventArgs e)
@@ -377,6 +378,7 @@ namespace client_app_MVD
             panel11.BringToFront();
             var personal_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from personal_table;", conncetion_string);
             dataGridView1.DataSource = personal_table.ResultData;
+            current_dataGrid = dataGridView1;
             //select last_name, first_name, patronymic, Date_of_birth from 
 
         }
@@ -395,6 +397,7 @@ namespace client_app_MVD
             panel12.BringToFront();
             var member_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from members_ivent;", conncetion_string);
             dataGridView2.DataSource = member_table.ResultData;
+            current_dataGrid = dataGridView2;
         }
 
         private void application_view(object sender, EventArgs e)
@@ -403,6 +406,7 @@ namespace client_app_MVD
             panel14.BringToFront();
             var application_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_application,type_incident_table.incident_name, applications_table.entrance_date,status_application.status_application_name,applicants_table.last_name from applications_table inner join type_incident_table on applications_table.id_type_incident = type_incident_table.id_type_incident inner join status_application on applications_table.id_status_application = status_application.id_status_application inner join applicants_table on applications_table.id_applicant = applicants_table.id_applicant;", conncetion_string);
             dataGridView4.DataSource = application_table.ResultData;
+            current_dataGrid = dataGridView4;
         }
 
         private void added_applicant(object sender, EventArgs e)
@@ -539,7 +543,8 @@ namespace client_app_MVD
                 MessageBox.Show(resultData.ErrorText);
             else
             {
-                dataGridView5.DataSource = resultData.ResultData;                
+                dataGridView5.DataSource = resultData.ResultData;
+                current_dataGrid = dataGridView5;
                 panel19.Visible = true;
                 panel19.BringToFront();
             }
@@ -553,11 +558,10 @@ namespace client_app_MVD
 
         private void find_rows(object sender, EventArgs e)
         {
-            panel20.Visible = true;    
-
-            for (int i = 0; (i <= (dataGridView5.Columns.Count - 1)); i++)
+            panel20.Visible = true;
+            for (int i = 0; (i <= (current_dataGrid.Columns.Count - 1)); i++)
             {
-                dataGrid_columns_name.Add(dataGridView5.Columns[i].HeaderCell.Value);
+                dataGrid_columns_name.Add(current_dataGrid.Columns[i].HeaderCell.Value);
             }
             comboBox8.DataSource = dataGrid_columns_name;
         }
@@ -566,18 +570,18 @@ namespace client_app_MVD
             var column_index=dataGrid_columns_name.IndexOf(comboBox8.SelectedItem);
             if (textBox20.Text != "")
             {
-                for (int i = 0; i < dataGridView5.RowCount; i++)
+                for (int i = 0; i < current_dataGrid.RowCount; i++)
                 {
-                    dataGridView5.Rows[i].Selected = false;
-                    if (dataGridView5.Rows[i].Cells[column_index].Value != null)
+                    current_dataGrid.Rows[i].Selected = false;
+                    if (current_dataGrid.Rows[i].Cells[column_index].Value != null)
                     {
-                        if (dataGridView5.Rows[i].Cells[column_index].Value.ToString().ToLower().Contains(textBox20.Text.ToLower()))
+                        if (current_dataGrid.Rows[i].Cells[column_index].Value.ToString().ToLower().Contains(textBox20.Text.ToLower()))
                         {
-                            dataGridView5.Rows[i].Cells[column_index].Style.BackColor = Color.Red;
+                            current_dataGrid.Rows[i].Cells[column_index].Style.BackColor = Color.Red;
                         }
                         else
                         {
-                            dataGridView5.Rows[i].Cells[column_index].Style.BackColor = Color.White;
+                            current_dataGrid.Rows[i].Cells[column_index].Style.BackColor = Color.White;
                         }
                     }
                 }
@@ -585,9 +589,9 @@ namespace client_app_MVD
         
             else
             {
-                for (int i = 0; i < dataGridView5.RowCount; i++)
-                    for (int j = 0; j < dataGridView5.ColumnCount; j++)
-                        dataGridView5.Rows[i].Cells[j].Style.BackColor = Color.White;
+                for (int i = 0; i < current_dataGrid.RowCount; i++)
+                    for (int j = 0; j < current_dataGrid.ColumnCount; j++)
+                        current_dataGrid.Rows[i].Cells[j].Style.BackColor = Color.White;
             }
         }
     }
