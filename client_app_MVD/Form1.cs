@@ -169,14 +169,28 @@ namespace client_app_MVD
             if (result == DialogResult.Yes)
                 Application.Exit();
         }
-
+        //Отменяем текущие выполнимые операции (возможна омтена через хоткеи)
         private void cancel_operation(object sender, EventArgs e)
         {
-            MessageBox.Show("Операция отменена", "Уведомление");
-            panel1.Visible =panel4.Visible=  panel15.Visible=panel18.Visible=panel20.Visible=false;
+            remove_panel();
             dataGrid_columns_name.Clear();
             textBox20.Text = "";
             comboBox8.Items.Clear();            
+        }
+        void remove_panel()
+        {
+            if (panel2.Visible == false)
+            {
+                MessageBox.Show("Операция отменена", "Уведомление");
+                panel1.Visible = panel4.Visible = panel15.Visible = panel18.Visible = panel20.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Подсказска закрывается", "Уведомление");
+                panel2.Visible = false;
+            }    
+                
+
         }
         //работающая авторизация
         private void access_to_database(object sender, EventArgs e)
@@ -233,11 +247,10 @@ namespace client_app_MVD
                 }
             }           
         }
-
+        //справочная информация
         private void help(object sender, EventArgs e)
         {
-            panel2.Visible = true;
-            panel2.BringToFront();
+            operation_with_panel(panel2);
             StreamReader sr = new StreamReader("help1.txt");
             string line="";
             while (!sr.EndOfStream)//пока не конец
@@ -252,17 +265,10 @@ namespace client_app_MVD
         {
             switch (keyData)
             {
-                case Keys.Escape:
-                    if (panel2.Visible == true)
-                        panel2.Visible = false;
-                    else if (panel1.Visible == true)
-                    {
-                        MessageBox.Show("Операция отменена", "Уведомление");
-                        panel1.Visible = false;
-                    }                       
+                case Keys.Escape: //по клавише Esc гасим все панели)
+                    remove_panel();            
                     break;
             }
-
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
@@ -300,13 +306,17 @@ namespace client_app_MVD
 
         private void registration_panel_open(object sender, EventArgs e)
         {
-            panel4.Visible = true;
+            operation_with_panel(panel4);
         }
-
+        //метод для активации панели и помещении ее на передний план - мелочь, но уменьшает количество строк;)
+        void operation_with_panel(Panel panel)
+        {
+            panel.Visible = true;
+            panel.BringToFront();
+        }
         private void see_applicants_table(object sender, EventArgs e)
         {
-            panel13.Visible = true;
-            panel13.BringToFront();
+            operation_with_panel(panel13);
             var applicants_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from applicants_table;", conncetion_string);
             dataGridView3.DataSource = applicants_table.ResultData;
             current_dataGrid = dataGridView3;
@@ -314,89 +324,56 @@ namespace client_app_MVD
 
         private void see_ranks_table(object sender, EventArgs e)
         {
-            panel5.Visible = true;
-            panel5.BringToFront();
+            operation_with_panel(panel5);
             var rank_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_rank, Rank_name from rank_table;", conncetion_string);
             datatable_see(rank_table, 20,43, 20, panel5);            
         }
-        void datatable_see(MySQLData.MySqlExecuteData.MyResultData myResultData, int location_X, int location_Y, int size, Panel panel_add)
-        {
-            int default_size = size;
-            for (int i = 0; i < myResultData.ResultData.Rows.Count; i++)
-            {
-                for (int j = 0; j < myResultData.ResultData.Columns.Count; j++)
-                {
-                    var label = new Label();
-                    label.Size = new Size(size, 20);
-                    label.Location = new Point(location_X, location_Y);
-                    label.Font = new Font("Arial", 14);
-                    label.ForeColor = Color.White;
-                    label.Text = myResultData.ResultData.Rows[i][j].ToString();
-                    panel_add.Controls.Add(label);
-                    size += 400;
-                    location_X += 190;
-                }
-                size = default_size;
-                location_X = 20;
-                location_Y += 30;
-            }
-        }
+
 
         private void type_incident_view(object sender, EventArgs e)
         {
-            panel6.Visible = true;
-            panel6.BringToFront();
+            operation_with_panel(panel6);
             var type_incident_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_type_incident, incident_name from type_incident_table;", conncetion_string);
             datatable_see(type_incident_table, 20, 58, 90, panel6);
         }
 
         private void status_application_view(object sender, EventArgs e)
         {
-            panel7.Visible = true;
-            panel7.BringToFront();
+            operation_with_panel(panel7);
             var status_application_table = MySQLData.MySqlExecuteData.SqlReturnDataset("Select id_status_application, status_application_name from status_application;", conncetion_string);
             datatable_see(status_application_table, 20, 58,150, panel7);
         }
 
         private void time_rewiev_application_view(object sender, EventArgs e)
         {
-            panel8.Visible = true;
-            panel8.BringToFront();
+            operation_with_panel(panel8);
             var time_review_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_time_review,how_long_days from time_review_table;", conncetion_string);
             datatable_see(time_review_table, 20, 58, 140, panel8);
         }
 
         private void status_table_view(object sender, EventArgs e)
         {
-            panel9.Visible = true;
-            panel9.BringToFront();
+            operation_with_panel(panel9);
             var status_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select status_name, Duties from status_table; ", conncetion_string);
             datatable_see(status_table, 20, 58, 140, panel9);
         }
-
-        private void personal_table_view(object sender, EventArgs e)
-        {
-            panel11.Visible = true;
-            panel11.BringToFront();
-            var personal_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from personal_table;", conncetion_string);
-            dataGridView1.DataSource = personal_table.ResultData;
-            current_dataGrid = dataGridView1;
-            //select last_name, first_name, patronymic, Date_of_birth from 
-
-        }
-
         private void forms_entrance_view(object sender, EventArgs e)
         {
-            panel10.Visible = true;
-            panel10.BringToFront();
+            operation_with_panel(panel10);
             var forms_entrance = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_form_entrance, form_name from forms_entrance_table;", conncetion_string);
             datatable_see(forms_entrance, 20, 58, 100, panel10);
         }
 
+        private void personal_table_view(object sender, EventArgs e)
+        {
+            operation_with_panel(panel11);
+            var personal_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from personal_table;", conncetion_string);
+            dataGridView1.DataSource = personal_table.ResultData;
+            current_dataGrid = dataGridView1;
+        } 
         private void members_ivent_view(object sender, EventArgs e)
         {
-            panel12.Visible = true;
-            panel12.BringToFront();
+            operation_with_panel(panel12);
             var member_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select last_name, first_name, patronymic, Date_of_birth from members_ivent;", conncetion_string);
             dataGridView2.DataSource = member_table.ResultData;
             current_dataGrid = dataGridView2;
@@ -404,8 +381,7 @@ namespace client_app_MVD
 
         private void application_view(object sender, EventArgs e)
         {
-            panel14.Visible = true;
-            panel14.BringToFront();
+            operation_with_panel(panel14);
             var application_table = MySQLData.MySqlExecuteData.SqlReturnDataset("select id_application,type_incident_table.incident_name, applications_table.entrance_date,status_application.status_application_name,applicants_table.last_name from applications_table inner join type_incident_table on applications_table.id_type_incident = type_incident_table.id_type_incident inner join status_application on applications_table.id_status_application = status_application.id_status_application inner join applicants_table on applications_table.id_applicant = applicants_table.id_applicant;", conncetion_string);
             dataGridView4.DataSource = application_table.ResultData;
             current_dataGrid = dataGridView4;
@@ -413,12 +389,12 @@ namespace client_app_MVD
 
         private void added_applicant(object sender, EventArgs e)
         {
-            panel15.Visible = true;
+            operation_with_panel(panel15);
         }
         //Добавление участников события
         private void added_member_ivent(object sender, EventArgs e)
         {
-            panel16.Visible = true;
+            operation_with_panel(panel16);
         }
         void combobox_items_added(MySQLData.MySqlExecuteData.MyResultData myResultData, ComboBox comboBox, string displaymember, string valuemember)
         {
@@ -430,7 +406,7 @@ namespace client_app_MVD
         private void added_application(object sender, EventArgs e)
         {
             //добавление нового заявления
-            panel17.Visible = true;
+            operation_with_panel(panel17);
             var type_incident_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_type_incident, incident_name FROM mvd_database_course_work.type_incident_table;", conncetion_string);
             var time_rewiew_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_time_review,how_long_days FROM mvd_database_course_work.time_review_table;", conncetion_string);
             var applicant_table = MySQLData.MySqlExecuteData.SqlReturnDataset("SELECT id_applicant, last_name FROM mvd_database_course_work.applicants_table;", conncetion_string);
@@ -473,6 +449,7 @@ namespace client_app_MVD
                 panel16.Visible = false;
             }
         }
+        //кусок с месседжами можно вынести в отделньый метод, да и вообще структуру тоже можно вынести - в качестве параметров - дата, ну строка с процедурой
         private void added_application_table(object sender, EventArgs e)
         {
             var added_data = dateTimePicker3.Value.Year.ToString() + "-" + dateTimePicker3.Value.Month.ToString() + "-" + dateTimePicker3.Value.Day.ToString();
@@ -502,7 +479,7 @@ namespace client_app_MVD
         }
         void analitycs_view(string name)
         {
-            panel18.Visible = true;
+            operation_with_panel(panel18);
             switch (name)
             {
                 case "Дата1":
@@ -551,13 +528,14 @@ namespace client_app_MVD
                 panel19.BringToFront();
             }
         }
+        //перевод текста в дату из maskedtextBox
         string parse_str_to_datetime(string date)
         {
             DateTime dateTime = DateTime.Parse(date);
             string new_datetime = dateTime.Year + "-" + dateTime.Month + "-" + dateTime.Day;
             return new_datetime;
         }
-
+        //открытие панели для поиска информаиии
         private void find_rows(object sender, EventArgs e)
         {
             panel20.Visible = true;
@@ -570,6 +548,7 @@ namespace client_app_MVD
                 comboBox8.Items.Add(dataGrid_columns_name[i]);
             }           
         }
+        //метод textbox'a для адаптивного поиска данных (он же поиск в реальном времени)
         private void find_rows_in_datagrid(object sender, EventArgs e)
         {
             var column_index=dataGrid_columns_name.IndexOf(comboBox8.SelectedItem);
@@ -597,6 +576,29 @@ namespace client_app_MVD
                 for (int i = 0; i < current_dataGrid.RowCount; i++)
                     for (int j = 0; j < current_dataGrid.ColumnCount; j++)
                         current_dataGrid.Rows[i].Cells[j].Style.BackColor = Color.White;
+            }
+        }
+        //метод для представления таблиц не в dataGrid (для чего - не ясно)
+        void datatable_see(MySQLData.MySqlExecuteData.MyResultData myResultData, int location_X, int location_Y, int size, Panel panel_add)
+        {
+            int default_size = size;
+            for (int i = 0; i < myResultData.ResultData.Rows.Count; i++)
+            {
+                for (int j = 0; j < myResultData.ResultData.Columns.Count; j++)
+                {
+                    var label = new Label();
+                    label.Size = new Size(size, 20);
+                    label.Location = new Point(location_X, location_Y);
+                    label.Font = new Font("Arial", 14);
+                    label.ForeColor = Color.White;
+                    label.Text = myResultData.ResultData.Rows[i][j].ToString();
+                    panel_add.Controls.Add(label);
+                    size += 400;
+                    location_X += 190;
+                }
+                size = default_size;
+                location_X = 20;
+                location_Y += 30;
             }
         }
     }
