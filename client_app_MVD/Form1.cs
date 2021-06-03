@@ -181,8 +181,8 @@ namespace client_app_MVD
         {
             if (panel2.Visible == false)
             {
-                MessageBox.Show("Операция отменена", "Уведомление");
-                panel1.Visible = panel4.Visible = panel15.Visible = panel18.Visible = panel20.Visible = false;
+                MessageBox.Show("Панельки закрывавются....", "Уведомление");
+                panel1.Visible = panel4.Visible = panel5.Visible = panel6.Visible = panel7.Visible = panel8.Visible = panel9.Visible = panel10.Visible = panel11.Visible = panel12.Visible = panel13.Visible = panel14.Visible=panel15.Visible = panel16.Visible = panel17.Visible = panel18.Visible = panel19.Visible=panel20.Visible = false;
             }
             else
             {
