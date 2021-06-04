@@ -292,9 +292,15 @@ namespace client_app_MVD
                     MessageBox.Show("Пароли не совпадают. Ошибка!");
                 else
                 {
-                    var user_registration_string = MySQLData.MySqlExecute.SqlNoneQuery("call users_registration('"+ textBox3.Text+"', '"+textBox4.Text+"', '"+textBox5.Text+"', '"+textBox6.Text+"', '"+textBox7.Text+"', '"+textBox9.Text+"');", conncetion_string);
-                    if (user_registration_string.HasError)
-                        MessageBox.Show(user_registration_string.ErrorText);
+                    MySQLData.MySqlExecute.MyResult user_registration = null;
+                    if (textBox9.Text=="Сотрудник")
+                        user_registration = MySQLData.MySqlExecute.SqlNoneQuery("call personal_registration('" + textBox3.Text+"', '"+textBox4.Text+"', '"+textBox5.Text+"', '"+textBox6.Text+"', '"+textBox7.Text+"');", conncetion_string);
+                    if (textBox9.Text == "Заявитель")
+                        user_registration = MySQLData.MySqlExecute.SqlNoneQuery("call applicant_registration('" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox7.Text + "');", conncetion_string);
+                    if (textBox9.Text == "Участник события")
+                        user_registration = MySQLData.MySqlExecute.SqlNoneQuery("call member_ivent_registration('" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox7.Text + "');", conncetion_string);
+                    if (user_registration.HasError)
+                        MessageBox.Show(user_registration.ErrorText);
                     else
                     {
                         MessageBox.Show("Успешно!", "Уведомление");
